@@ -23,6 +23,23 @@ finite-shot syndrome statistics.
 
 ![Six-method E1 comparison](benchmarks/E1-bluequbit/logical-error.png)
 
+## Interactive demo
+
+Explore the recorded E1 experiment at **[drmbios.github.io/vfqec](https://drmbios.github.io/vfqec/)**.
+Replay the first calibration, inspect all six methods at any round, switch chart scales,
+and download the original reports and dataset. The demo replays verified observations;
+it does not submit cloud jobs or require credentials.
+
+To preview locally without installing experiment dependencies:
+
+```bash
+python3 scripts/build_demo.py
+python3 -m http.server 8765 --directory build/pages
+```
+
+Open `http://localhost:8765`. The dedicated Pages workflow deploys only allowlisted
+website files and the public benchmark artifacts; `.env` is never included.
+
 ## Quickstart
 
 Python 3.11–3.13, or Docker with Compose v2.24+:

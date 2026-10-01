@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e272b">
+  <meta name="description" content="Replay a real BlueQubit CPU hybrid experiment in syndrome-only virtual-field quantum error correction. Explore six methods, calibration, and reproducible results.">
+  <title>VFQEC — Learn the error. Keep the memory.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#lab">Skip to experiment</a>
+<header class="header wrap">
+  <a class="brand" href="#" aria-label="VFQEC home"><span class="brand-mark">↗</span>VFQEC<span class="brand-description">VIRTUAL-FIELD QEC</span></a>
+  <nav aria-label="Main navigation"><a href="#lab">Experiment</a><a href="#method">The idea</a><a class="repo-link" href="https://github.com/drmbios/vfqec">GitHub <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span>A REPRODUCIBLE QUANTUM EXPERIMENT</p>
+      <h1 id="hero-title">Learn the error.<br>Keep the <em>memory.</em></h1>
+      <p class="hero-description">A controller learns to quiet hidden quantum errors using only syndrome measurements. Explore the real experiment, one correction at a time.</p>
+      <div class="hero-actions"><a class="button primary" href="#lab">Explore the experiment <span aria-hidden="true">↓</span></a><a class="text-link" href="./reports/report.pdf" target="_blank" rel="noopener">Read the report ↗</a></div>
+      <p class="provenance">BlueQubit CPU coherent simulation<br><span>Noise, syndrome measurement & recovery run locally.</span></p>
+    </div>
+    <div class="hero-visual" aria-label="Illustration of three qubits and compensating rotations">
+      <div class="visual-top"><span>THREE QUBITS. ONE LOGICAL MEMORY.</span><span class="tiny-pill">E1 / Z MEMORY</span></div>
+      <svg class="qubit-art" viewBox="0 0 520 330" role="img" aria-label="Three linked qubits with hidden rotations and learned correction arrows">
+        <defs><radialGradient id="glow"><stop stop-color="#62e0c2" stop-opacity=".25"/><stop offset="1" stop-color="#62e0c2" stop-opacity="0"/></radialGradient><marker id="arrow-teal" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="#80edd0"/></marker><marker id="arrow-orange" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="#ffad81"/></marker></defs>
+        <circle cx="260" cy="165" r="220" fill="url(#glow)"/>
+        <path d="M90 156 L430 156" stroke="#48817b" stroke-dasharray="3 7"/>
+        <g class="sphere" transform="translate(100 156)"><circle r="53"/><ellipse rx="53" ry="17"/><ellipse rx="20" ry="53"/><path d="M0 -67 V67 M-67 0 H67" class="axis"/><path d="M-37 -47 A60 60 0 0 1 43 -42" class="error-arrow" marker-end="url(#arrow-orange)"/><path d="M44 44 A60 60 0 0 1 -36 48" class="correction-arrow" marker-end="url(#arrow-teal)"/><circle r="5" class="center"/><text y="99">QUBIT 01</text></g>
+        <g class="sphere" transform="translate(260 156)"><circle r="53"/><ellipse rx="53" ry="17"/><ellipse rx="20" ry="53"/><path d="M0 -67 V67 M-67 0 H67" class="axis"/><path d="M-37 -47 A60 60 0 0 1 43 -42" class="error-arrow" marker-end="url(#arrow-orange)"/><path d="M44 44 A60 60 0 0 1 -36 48" class="correction-arrow" marker-end="url(#arrow-teal)"/><circle r="5" class="center"/><text y="99">QUBIT 02</text></g>
+        <g class="sphere" transform="translate(420 156)"><circle r="53"/><ellipse rx="53" ry="17"/><ellipse rx="20" ry="53"/><path d="M0 -67 V67 M-67 0 H67" class="axis"/><path d="M-37 -47 A60 60 0 0 1 43 -42" class="error-arrow" marker-end="url(#arrow-orange)"/><path d="M44 44 A60 60 0 0 1 -36 48" class="correction-arrow" marker-end="url(#arrow-teal)"/><circle r="5" class="center"/><text y="99">QUBIT 03</text></g>
+      </svg>
+      <div class="visual-bottom"><span><i class="legend-dot orange"></i>Hidden rotation</span><span><i class="legend-dot mint"></i>Learned compensation</span></div>
+      <p class="illustration-note">Conceptual illustration · inspect the measured data below</p>
+    </div>
+  </section>
+  <section class="stats wrap" aria-label="Verified experiment summary">
+    <div><strong id="improvement">—</strong><span>fewer observed final failures</span><small>Learned field vs. standard QEC</small></div>
+    <div><strong id="job-count">—</strong><span>completed cloud jobs</span><small>BlueQubit CPU · October 1, 2026</small></div>
+    <div><strong id="round-count">—</strong><span>error-correction rounds</span><small>4,000 readouts per method</small></div>
+    <div class="stat-link"><span class="verified-icon">✓</span><span>Recorded. Verified.<br>Ready to reproduce.</span><a href="./data/result.json" download="vfqec-e1-bluequbit.json">Download the dataset ↗</a></div>
+  </section>
+  <section id="lab" class="lab wrap" aria-labelledby="lab-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / EXPERIMENT EXPLORER</p><h2 id="lab-title">Watch the correction take shape.</h2></div><span class="label">RECORDED REPLAY · SEED 1729</span></div>
+    <div id="load-status" role="status" class="load-status">Loading the verified experiment…</div>
+    <div class="lab-grid">
+      <article class="panel calibration">
+        <div class="panel-top"><div><span class="eyebrow">LEARN FROM SYNDROMES</span><h3>Calibration replay</h3></div><button id="play" class="small-button" disabled aria-label="Play calibration replay">▶ Replay</button></div>
+        <p class="panel-description">Move through the first calibration. Each point is a measured SPSA candidate, using 4,000 fresh probe shots.</p>
+        <div class="cost-readout"><div><span>MEASURED SYNDROME FIRING</span><strong id="syndrome-cost">—</strong></div><span id="step-label" class="mono">Step — / 50</span></div>
+        <svg id="calibration-chart" class="chart calibration-chart" viewBox="0 0 540 195" role="img" aria-label="Measured syndrome firing rate over the first calibration"></svg>
+        <label class="slider-label" for="step-slider">Calibration step <output id="step-value">0</output></label>
+        <input id="step-slider" type="range" min="0" max="50" value="0" disabled>
+        <div class="slider-ends"><span>Before learning</span><span>50 SPSA steps</span></div>
+        <div class="field-heading"><span>Candidate correction θ</span><span>radians</span></div>
+        <div id="field-bars" class="field-bars"></div>
+        <div class="deployed-field"><span>DEPLOYED θ · AVERAGED SPSA</span><output id="deployed-theta">—</output></div>
+        <p class="micro-copy">Deployment uses the averaged correction from the second half of SPSA. The replay shows individual candidates.</p>
+      </article>
+      <article class="panel results">
+        <div class="panel-top"><div><span class="eyebrow">COMPARE SIX METHODS</span><h3>A more stable logical memory</h3></div></div>
+        <div class="chart-controls"><div class="segmented" role="group" aria-label="Chart scale"><button id="encoded-scale" class="active" aria-pressed="true">Encoded detail</button><button id="full-scale" aria-pressed="false">Full range</button></div><span class="axis-label">OBSERVED FAILURE %</span></div>
+        <svg id="results-chart" class="chart results-chart" viewBox="0 0 650 300" role="img" aria-label="Logical failure probability versus round for all six correction methods"></svg>
+        <div id="method-legend" class="method-legend" aria-label="Chart legend"></div>
+        <p id="scale-note" class="micro-copy">All six curves are drawn; the unencoded curve extends above the encoded-detail view.</p>
+        <label class="slider-label" for="round-slider">Inspect round <output id="round-value">60</output></label>
+        <input id="round-slider" type="range" min="1" max="60" value="60" disabled>
+        <div class="outcome"><div><span>STANDARD QEC</span><strong id="standard-error">—</strong><small id="standard-count">—</small></div><span class="outcome-arrow" aria-hidden="true">→</span><div><span>LEARNED FIELD</span><strong id="learned-error">—</strong><small id="learned-count">—</small></div><div class="oracle-outcome"><span>ORACLE</span><strong id="oracle-error">—</strong><small id="oracle-count">—</small></div></div>
+        <details class="all-results"><summary>All six methods at this round</summary><div class="table-scroll"><table><thead><tr><th>Method</th><th>Failures</th><th>Error</th><th>95% interval</th></tr></thead><tbody id="results-table"></tbody></table></div></details>
+      </article>
+    </div>
+    <div class="experiment-note"><span class="info-icon">i</span><p>One seed, one noise model. The 11× comparison describes the final observed counts, not a guaranteed improvement. Round readouts share simulated trajectories; uncertainty intervals are per point. No hardware performance or fault-tolerant threshold is claimed.</p></div>
+  </section>
+  <section id="method" class="method wrap" aria-labelledby="method-title">
+    <div class="section-heading"><div><p class="eyebrow">02 / THE IDEA</p><h2 id="method-title">A feedback loop with a narrow view.</h2></div><p>The optimizer sees syndromes.<br>The hidden field stays hidden.</p></div>
+    <div class="method-steps">
+      <article><span class="step-number">01</span><h3>Measure the disturbance.</h3><p>Hidden rotations disturb a three-qubit memory. Stabilizer measurements provide a signal without supplying the logical state to the optimizer.</p><div class="formula">Rₓ(εᵢ) <span>→</span> syndrome statistics</div></article>
+      <article><span class="step-number">02</span><h3>Learn a virtual field.</h3><p>SPSA adjusts per-qubit correction angles to lower the finite-shot syndrome cost. True noise parameters and logical readouts are excluded from its interface.</p><div class="formula">θ <span>←</span> measured feedback</div></article>
+      <article><span class="step-number">03</span><h3>Compensate each round.</h3><p>Apply the learned inverse rotations alongside QEC recovery. Compare the observed logical failures against the baselines and oracle.</p><div class="formula">Rₓ(εᵢ) Rₓ(−θᵢ) <span>≈</span> I</div></article>
+    </div>
+  </section>
+  <section class="evidence wrap" aria-labelledby="evidence-title">
+    <div><p class="eyebrow">03 / OPEN EVIDENCE</p><h2 id="evidence-title">Nothing behind the curtain.</h2><p>The code, observations, provider job IDs, and report are public. Run the same experiment with your own environment.</p><a class="button light" href="https://github.com/drmbios/vfqec">View the repository ↗</a></div>
+    <div class="evidence-list"><a href="./reports/report.pdf" target="_blank" rel="noopener"><span>Research report<small>Three pages · methods, curves & limitations</small></span><span>PDF ↗</span></a><a href="./reports/report.html" target="_blank" rel="noopener"><span>Full visual report<small>Standalone report with all figures</small></span><span>HTML ↗</span></a><a href="./data/result.json" download="vfqec-e1-bluequbit.json"><span>Experiment dataset<small>Configuration, observations & 458 job IDs</small></span><span>JSON ↓</span></a><a href="./data/cloud-verification.json" download="vfqec-e1-verification.json"><span>Verification record<small>Cost, provenance & local comparison</small></span><span>JSON ↓</span></a></div>
+  </section>
+  <section class="reproduce wrap"><div><span class="eyebrow">REPRODUCE E1</span><p>Local simulation runs without an API key.</p></div><div class="command"><code>vfqec run E1 --backend local</code><button id="copy-command" aria-label="Copy local reproduction command">Copy</button></div></section>
+</main>
+<footer class="footer wrap"><span>VFQEC <span class="footer-dot">/</span> Virtual-Field Quantum Error Correction</span><span>Static demo · Recorded hybrid simulation · <a href="https://github.com/drmbios/vfqec">Source ↗</a></span></footer>
+<noscript><p class="wrap">Enable JavaScript to explore the recorded data. The <a href="./reports/report.html">standalone report</a> is available without JavaScript.</p></noscript>
+</body>
+</html>
