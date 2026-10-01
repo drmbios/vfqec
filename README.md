@@ -9,6 +9,20 @@ This is a phenomenological simulation, not a claim of a new fault-tolerant thres
 hardware performance. It includes real numerical results, an API/worker/dashboard stack,
 and explicit execution provenance. No API key is needed for local experiments.
 
+## Verified E1 result
+
+On October 1, 2026, the full BlueQubit CPU hybrid E1 run completed 458 cloud jobs.
+After 60 rounds, standard QEC had 22 failures out of 4,000 readouts; learned
+compensation had 2, matching the oracle's observed count. This is an 11-fold
+reduction in observed failures for this seed/model. The optimizer uses only
+finite-shot syndrome statistics.
+
+[Benchmark and methodology](benchmarks/E1-bluequbit/README.md) ·
+[PDF report](benchmarks/E1-bluequbit/report.pdf) ·
+[Raw results](benchmarks/E1-bluequbit/result.json)
+
+![Six-method E1 comparison](benchmarks/E1-bluequbit/logical-error.png)
+
 ## Quickstart
 
 Python 3.11–3.13, or Docker with Compose v2.24+:
@@ -40,9 +54,6 @@ vfqec run E1 --backend local
 vfqec ledger
 vfqec report RUN_ID
 ```
-
-On this delivered workspace, `.venv` already contains a tested Python environment.
-Full source contents are provided in `DELIVERY.md` beside this README.
 
 Generated artifacts are under `results/RUN_ID/`. Compose uses a named `results` volume;
 access exports through the dashboard or `/runs/RUN_ID/artifacts/report.pdf`.
@@ -231,7 +242,9 @@ estimates are not guaranteed final bills. The SDK documents estimates for CPU/GP
 MPS selection is implemented but will fail closed if the provider cannot quote a cost.
 MPS truncation that destroys unitarity is rejected. This implementation uses dense data states and is not a scalable d=5 MPS QEC simulator.
 Nine-data-qubit runs use more remote jobs; E2 reserves a 4000-job limit by default. Remote integration
-requires an account/token and was not executed in the included local validation.
+requires an account/token. The full E1 CPU cloud run completed successfully; see
+[the published benchmark](benchmarks/E1-bluequbit/README.md) for configuration, results,
+provider job IDs, and recorded cost.
 
 Official interfaces used:
 [BlueQubit SDK](https://app.bluequbit.io/sdk-docs/bluequbit.sdk.html),
@@ -287,5 +300,11 @@ and 2/4000 for each learned/oracle method. Initial learned theta was approximate
 (0.12835, -0.08867, 0.14367) radians versus the evaluation-only true field
 (0.12, -0.08, 0.15). The unencoded memory showed coherent oscillations and was flagged
 as unsuitable for a simple exponential fit. These observations belong to one seed and
-model; they are not constants used by the simulator. See the delivered example report
-and result JSON for all six methods, intervals, configurations and actual provenance.
+model; they are not constants used by the simulator. See the
+[BlueQubit CPU hybrid benchmark](benchmarks/E1-bluequbit/README.md), including
+[PDF](benchmarks/E1-bluequbit/report.pdf), [HTML](benchmarks/E1-bluequbit/report.html),
+and [result JSON](benchmarks/E1-bluequbit/result.json), for all six methods, intervals,
+configurations and actual provenance. The cloud run completed 458 provider jobs with
+$0.00 total recorded cost. All 453 optimizer observations, learned field updates, and
+six final logical counts match the [local reference](benchmarks/E1-local/result.json);
+small intermediate numerical differences are documented in the benchmark.

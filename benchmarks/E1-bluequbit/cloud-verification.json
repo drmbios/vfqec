@@ -1,0 +1,68 @@
+{
+  "run_id": "aca95affb4e946598029f8c307c01b80",
+  "status": "complete",
+  "backend": "BlueQubit cpu coherent simulation + local noise/syndrome/recovery",
+  "commit": "f2f026c2021c444a2a36edd1972eb47c77148676",
+  "remote_jobs": 458,
+  "complete_jobs": 458,
+  "recorded_cost_usd": 0.0,
+  "shots_used": 3252000,
+  "optimizer_matches_local": true,
+  "updates_match_local": true,
+  "max_difference_by_method": {
+    "unencoded": {
+      "errors": 1.0,
+      "shots": 0.0,
+      "logical_error": 0.00024999999999997247,
+      "syndrome_fired": 0.0,
+      "syndrome_checks": 0.0,
+      "exact_probability": 1.3334578854440338e-06
+    },
+    "standard": {
+      "errors": 0.0,
+      "shots": 0.0,
+      "logical_error": 0.0,
+      "syndrome_fired": 0.0,
+      "syndrome_checks": 0.0,
+      "exact_probability": 1.0795065558469319e-08
+    },
+    "twirled": {
+      "errors": 0.0,
+      "shots": 0.0,
+      "logical_error": 0.0,
+      "syndrome_fired": 0.0,
+      "syndrome_checks": 0.0,
+      "exact_probability": 6.005862704730469e-09
+    },
+    "calibrated": {
+      "errors": 0.0,
+      "shots": 0.0,
+      "logical_error": 0.0,
+      "syndrome_fired": 0.0,
+      "syndrome_checks": 0.0,
+      "exact_probability": 1.3862013157348377e-09
+    },
+    "adaptive": {
+      "errors": 0.0,
+      "shots": 0.0,
+      "logical_error": 0.0,
+      "syndrome_fired": 0.0,
+      "syndrome_checks": 0.0,
+      "exact_probability": 1.8259283613092717e-09
+    },
+    "oracle": {
+      "errors": 0.0,
+      "shots": 0.0,
+      "logical_error": 0.0,
+      "syndrome_fired": 8.0,
+      "syndrome_checks": 0.0,
+      "exact_probability": 1.4756563311785556e-09
+    }
+  },
+  "all_finite_shot_results_match_local": false,
+  "max_exact_probability_difference": 1.3334578854440338e-06,
+  "final_logical_counts_match_local": true,
+  "optimizer_observations_checked": 453,
+  "pdf_pages_visually_checked": 3,
+  "artifacts_downloaded": 8
+}
