@@ -1,0 +1,19 @@
+name: tests-and-image
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.lock -e '.[dev]'
+      - run: ruff check . && ruff format --check .
+      - run: pytest -q
+        env:
+          LLM_PROVIDER: none
+          OPENBLAS_NUM_THREADS: '1'
+      - run: vfqec run E1 --backend local --quick
+      - run: docker build --target runtime -t vfqec:ci .

@@ -1,0 +1,1 @@
+"""VFQEC package component."""

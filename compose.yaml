@@ -1,0 +1,95 @@
+name: vfqec
+x-runtime: &runtime
+  image: vfqec:local
+  build:
+    context: .
+    target: runtime
+    args:
+      GIT_COMMIT: ${VFQEC_GIT_COMMIT:-unversioned}
+  env_file:
+    - path: .env
+      required: false
+  environment: &environment
+    RESULTS_DIR: /app/results
+    DATABASE_URL: postgresql+psycopg://vfqec:${POSTGRES_PASSWORD:-vfqec-local-only}@db:5432/vfqec
+    REDIS_URL: redis://redis:6379/0
+    API_URL: http://api:8000
+  volumes:
+    - results:/app/results
+  depends_on:
+    db:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  restart: unless-stopped
+services:
+  api:
+    <<: *runtime
+    ports: ["127.0.0.1:8000:8000"]
+  worker:
+    <<: *runtime
+    command: ["python", "-m", "vfqec.worker"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; from redis import Redis; from rq import Worker; assert Worker.all(connection=Redis.from_url(os.environ['REDIS_URL']))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  dashboard:
+    <<: *runtime
+    command: ["sh", "-c", "streamlit run $$(python -c 'import importlib.util; print(importlib.util.find_spec(\"vfqec.dashboard\").origin)' 2>/dev/null | tail -1) --server.address=0.0.0.0 --server.port=8501 --browser.gatherUsageStats=false"]
+    ports: ["127.0.0.1:8501:8501"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  db:
+    image: postgres:16.9-alpine
+    environment:
+      POSTGRES_USER: vfqec
+      POSTGRES_DB: vfqec
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vfqec-local-only}
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vfqec -d vfqec"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7.4.4-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: ["redis:/data"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  worker-gpu:
+    <<: *runtime
+    profiles: ["gpu"]
+    image: vfqec:gpu
+    platform: linux/amd64
+    build:
+      context: .
+      target: gpu
+      args:
+        GIT_COMMIT: ${VFQEC_GIT_COMMIT:-unversioned}
+    command: ["python", "-m", "vfqec.worker"]
+    environment:
+      <<: *environment
+      AER_DEVICE: GPU
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "python", "-c", "from qiskit_aer import AerSimulator; assert 'GPU' in AerSimulator().available_devices()"]
+      interval: 30s
+      timeout: 10s
+volumes:
+  results:
+  postgres:
+  redis:

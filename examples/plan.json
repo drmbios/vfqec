@@ -1,0 +1,8 @@
+{
+  "question": "Does syndrome-only compensation reduce bit-flip memory failures?",
+  "max_shots": 1000000,
+  "runs": [
+    {"experiment":"E3","distance":3,"p":0.002,"eps_x":[0.12],"rounds":12,"shots":500,"evaluation_shots":1000,"iterations":12},
+    {"experiment":"E3","distance":5,"p":0.002,"eps_x":[0.12],"rounds":12,"shots":500,"evaluation_shots":1000,"iterations":12}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "experiment": "E5",
+  "enabled": false,
+  "backend": "unexecuted hardware template",
+  "purpose": "3-qubit GHZ preparation/readout smoke test before provider-specific QEC circuits",
+  "shots": 100,
+  "submit": false
+}
