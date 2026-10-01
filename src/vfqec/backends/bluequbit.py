@@ -16,6 +16,7 @@ from qiskit import QuantumCircuit
 
 from vfqec.noise.model import Gate
 from vfqec.physics.circuits import append_gates
+from vfqec.physics.operators import apply_subsystem
 
 
 class BlueQubitBackend:
@@ -182,7 +183,21 @@ class BlueQubitBackend:
         self.cache[key] = unitary
         return unitary
 
+    def _small_unitary(self, gate: Gate) -> np.ndarray:
+        support = tuple(range(len(gate.support)))
+        return self._unitary([replace(gate, support=support, twirl=False)], len(support))
+
     def evolve_density(self, rho: np.ndarray, gates: list[Gate], n: int) -> np.ndarray:
+        if n > 8:
+            for gate in gates:
+                u = self._small_unitary(gate)
+
+                def propagate(operator):
+                    left = apply_subsystem(rho.T, operator, gate.support, n).T
+                    return apply_subsystem(left.conj(), operator, gate.support, n).conj()
+
+                rho = (propagate(u) + propagate(u.conj().T)) / 2 if gate.twirl else propagate(u)
+            return rho
         if not gates:
             return rho
         if any(g.twirl for g in gates):
@@ -197,6 +212,18 @@ class BlueQubitBackend:
     def evolve_states(
         self, states: np.ndarray, gates: list[Gate], n: int, rng: np.random.Generator
     ) -> np.ndarray:
+        if n > 8:
+            # The SDK caps statevector retrieval at 16 qubits. Use 2/4-qubit Choi probes
+            # and embed their remote gate matrices, rather than requesting an 18-qubit state.
+            for gate in gates:
+                u = self._small_unitary(gate)
+                if gate.twirl:
+                    take = rng.random(len(states)) < 0.5
+                    states[take] = apply_subsystem(states[take], u, gate.support, n)
+                    states[~take] = apply_subsystem(states[~take], u.conj().T, gate.support, n)
+                else:
+                    states = apply_subsystem(states, u, gate.support, n)
+            return states
         if not gates:
             return states
         if any(g.twirl for g in gates):

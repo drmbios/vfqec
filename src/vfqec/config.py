@@ -89,6 +89,7 @@ def preset(name: str, **overrides: object) -> Config:
             shots=512,
             evaluation_shots=512,
             iterations=30,
+            max_remote_jobs=4000,
         )
     elif name == "E3":
         base.update(eps_x=[0.12], rounds=30, shots=1000, evaluation_shots=2000)

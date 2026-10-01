@@ -212,7 +212,9 @@ docker compose run --rm worker vfqec run E1 --backend bluequbit --device cpu
 
 Devices are `cpu`, `gpu`, `mps.cpu`, and `mps.gpu`. The adapter submits real Qiskit
 circuits through the BlueQubit SDK. It obtains a coherent layer's unitary from a Choi
-state on twice the number of data qubits, then performs stochastic noise, finite-shot
+state on twice the number of data qubits for up to eight data qubits. For nine data
+qubits, it uses small 2/4-qubit Choi probes for individual gates, respecting the SDK
+16-qubit statevector retrieval cap. It then performs stochastic noise, finite-shot
 syndrome measurement, and classical recovery locally. The report therefore labels it
 **“BlueQubit … coherent simulation + local noise/syndrome/recovery.”** It does not claim
 that the entire repeated QEC circuit ran remotely or that cloud simulation is hardware.
@@ -227,8 +229,8 @@ remote unitary evolution is deterministic, and all local sampling seeds are reco
 A job-count cap and **estimated USD credit** cap are checked before submissions. Provider
 estimates are not guaranteed final bills. The SDK documents estimates for CPU/GPU;
 MPS selection is implemented but will fail closed if the provider cannot quote a cost.
-MPS truncation that destroys unitarity is rejected. This implementation materializes
-a dense data-unitary and is not a scalable d=5 MPS QEC simulator. Remote integration
+MPS truncation that destroys unitarity is rejected. This implementation uses dense data states and is not a scalable d=5 MPS QEC simulator.
+Nine-data-qubit runs use more remote jobs; E2 reserves a 4000-job limit by default. Remote integration
 requires an account/token and was not executed in the included local validation.
 
 Official interfaces used:

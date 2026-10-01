@@ -66,3 +66,19 @@ def initial_state(code) -> np.ndarray:
         state += pauli(state, code.n, "X", code.logical_x)
         state /= np.linalg.norm(state)
     return state
+
+
+def apply_subsystem(
+    states: np.ndarray, unitary: np.ndarray, support: tuple[int, ...], n: int
+) -> np.ndarray:
+    """Apply a small little-endian unitary to selected qubits in row state vectors."""
+    indices = np.arange(2**n)
+    mask = sum(1 << i for i in support)
+    bases = indices[(indices & mask) == 0]
+    local = np.arange(2 ** len(support))
+    offsets = sum(((local >> j) & 1) << qubit for j, qubit in enumerate(support))
+    groups = bases[:, None] | offsets[None, :]
+    transformed = np.einsum("...j,ij->...i", states[..., groups], unitary)
+    result = states.copy()
+    result[..., groups] = transformed
+    return result

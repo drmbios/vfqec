@@ -120,3 +120,27 @@ def test_bluequbit_ambiguous_submission_is_not_retried(tmp_path, monkeypatch):
     with pytest.raises(TimeoutError):
         backend.evolve_density(np.eye(2) / 2, [Gate("X", (0,), 0.1)], 1)
     assert client.calls == 1
+
+
+def test_bluequbit_nine_data_qubits_use_small_remote_probes(tmp_path, monkeypatch):
+    from vfqec.codes.stabilizer import make_code
+    from vfqec.noise.model import HiddenPlant
+    from vfqec.physics.operators import initial_state
+
+    monkeypatch.setenv("RESULTS_DIR", str(tmp_path))
+    ledger = Ledger()
+    config = preset("E2", backend="bluequbit")
+
+    class Capped(FakeBlueQubit):
+        def run(self, circuit, **kwargs):
+            assert circuit.num_qubits <= 16
+            return super().run(circuit, **kwargs)
+
+    client = Capped()
+    backend = BlueQubitBackend(config, ledger, ledger.create(config.model_dump()), client)
+    states = initial_state(make_code(config))[None, :]
+    gates = HiddenPlant(config).gates(np.linspace(-0.1, 0.1, 18), 0)
+    actual = backend.evolve_states(states.copy(), gates, 9, np.random.default_rng(1))
+    expected = LocalBackend().evolve_states(states.copy(), gates, 9, np.random.default_rng(1))
+    assert np.allclose(actual, expected, atol=1e-12)
+    assert client.calls > 0
