@@ -23,3 +23,4 @@ jobs:
           OPENBLAS_NUM_THREADS: '1'
       - run: vfqec run E1 --backend local --quick
       - run: docker build --target runtime -t vfqec:ci .
+      - run: docker run --rm --entrypoint python vfqec:ci -m pip check

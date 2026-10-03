@@ -21,7 +21,8 @@ ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/matplotlib \
     HOME=/home/vfqec OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 RUN groupadd --gid 10001 vfqec && useradd --uid 10001 --gid vfqec --create-home vfqec
 COPY --from=builder /wheels /wheels
-RUN pip install --no-cache-dir --no-index --find-links=/wheels vfqec && rm -rf /wheels
+RUN pip install --no-cache-dir --no-index --find-links=/wheels \
+    pip==26.2.1 setuptools==83.0.0 wheel==0.46.2 vfqec && rm -rf /wheels
 WORKDIR /app
 COPY examples ./examples
 RUN mkdir /app/results && chown -R vfqec:vfqec /app
