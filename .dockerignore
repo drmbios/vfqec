@@ -1,6 +1,12 @@
 .venv
 .git
 .env
+.env.*
+*.pem
+*.key
+build
+dist
+benchmarks
 results
 __pycache__
 *.egg-info
