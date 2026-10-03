@@ -1,4 +1,4 @@
-FROM python:3.11.13-slim AS builder
+FROM python:3.11-slim@sha256:bab1b7ef4b450c81002278d035eff85ebe394ae94df904f7a3ba14f7e16e487b AS builder
 WORKDIR /build
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential cmake ninja-build ca-certificates \
  && rm -rf /var/lib/apt/lists/*
@@ -11,17 +11,18 @@ RUN mkdir -p /opt/googletest /opt/stim \
 ENV CMAKE_ARGS="-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=/opt/googletest -DFETCHCONTENT_SOURCE_DIR_STIM=/opt/stim" \
     CMAKE_BUILD_PARALLEL_LEVEL=2
 COPY pyproject.toml requirements.lock ./
-RUN --mount=type=cache,target=/root/.cache/pip pip install pip==25.2 setuptools==80.9.0 wheel==0.45.1 \
+RUN --mount=type=cache,target=/root/.cache/pip pip install pip==26.2.1 setuptools==83.0.0 wheel==0.46.2 \
  && pip wheel --no-build-isolation --wheel-dir=/wheels -r requirements.lock
 COPY src ./src
 RUN pip wheel --no-deps --no-build-isolation --wheel-dir=/wheels .
 
-FROM python:3.11.13-slim AS runtime
+FROM python:3.11-slim@sha256:bab1b7ef4b450c81002278d035eff85ebe394ae94df904f7a3ba14f7e16e487b AS runtime
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/matplotlib \
     HOME=/home/vfqec OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 RUN groupadd --gid 10001 vfqec && useradd --uid 10001 --gid vfqec --create-home vfqec
 COPY --from=builder /wheels /wheels
-RUN pip install --no-cache-dir --no-index --find-links=/wheels vfqec && rm -rf /wheels
+RUN pip install --no-cache-dir --no-index --find-links=/wheels \
+    pip==26.2.1 setuptools==83.0.0 wheel==0.46.2 vfqec && rm -rf /wheels
 WORKDIR /app
 COPY examples ./examples
 RUN mkdir /app/results && chown -R vfqec:vfqec /app

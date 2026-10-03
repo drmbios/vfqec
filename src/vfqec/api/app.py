@@ -4,6 +4,7 @@ import asyncio
 import json
 import os
 from pathlib import Path
+from uuid import UUID
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, StreamingResponse
@@ -105,18 +106,23 @@ def progress(run_id: str, after: int = 0) -> list[dict]:
 def artifact(run_id: str, filename: str) -> FileResponse:
     row = get_run(run_id)
     allowed = {
-        "result.json",
-        "report.md",
-        "report.html",
-        "report.pdf",
-        "logical-error.png",
-        "convergence.png",
-        "fields.png",
-        "syndrome-circuit.qasm",
+        "result.json": "result.json",
+        "report.md": "report.md",
+        "report.html": "report.html",
+        "report.pdf": "report.pdf",
+        "logical-error.png": "logical-error.png",
+        "convergence.png": "convergence.png",
+        "fields.png": "fields.png",
+        "syndrome-circuit.qasm": "syndrome-circuit.qasm",
     }
     if filename not in allowed or row["status"] != "complete":
         raise HTTPException(404, "Artifact unavailable")
-    path = Path(os.getenv("RESULTS_DIR", "results")) / row["id"] / filename
-    if not path.is_file():
+    try:
+        directory = Path(os.getenv("RESULTS_DIR", "results")).resolve() / UUID(row["id"]).hex
+    except ValueError:
+        raise HTTPException(404, "Artifact unavailable") from None
+    path = (directory / allowed[filename]).resolve()
+    # Reject symlinks that escape the run, including a symlinked run directory.
+    if path.parent != directory or not path.is_file():
         raise HTTPException(404, "Artifact file missing")
     return FileResponse(path)

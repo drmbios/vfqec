@@ -1,0 +1,10 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "bluequbit-token"
+description = "BlueQubit API token assignment"
+regex = '''(?i)(?:bluequbit_api_token|bluequbit_api_key)\s*[=:]\s*["']?([a-zA-Z]{32})'''
+secretGroup = 1
+entropy = 3.0
+keywords = ["bluequbit"]

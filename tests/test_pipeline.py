@@ -58,3 +58,26 @@ def test_planner_respects_total_budget_and_prunes():
     assert plan["shot_bound"] <= plan["max_shots"]
     assert any(row["reason"] == "saturated" for row in plan["pruned"])
     assert all(c["p"] != 0.003 for c in plan["runs"])
+
+
+def test_artifacts_reject_symlink_escape_and_untrusted_ledger_paths(tmp_path, monkeypatch):
+    monkeypatch.setenv("RESULTS_DIR", str(tmp_path / "results"))
+    ledger = Ledger()
+    run_id = ledger.create({})
+    ledger.finish(run_id, "complete")
+    run_dir = tmp_path / "results" / run_id
+    run_dir.mkdir()
+    private_file = tmp_path / "private.txt"
+    private_file.write_text("private data")
+    (run_dir / "report.pdf").symlink_to(private_file)
+    client = TestClient(app)
+    assert client.get(f"/runs/{run_id}/artifacts/report.pdf").status_code == 404
+    assert client.get(f"/runs/{run_id}/artifacts/private.txt").status_code == 404
+    (run_dir / "report.pdf").unlink()
+    run_dir.rmdir()
+    run_dir.symlink_to(tmp_path, target_is_directory=True)
+    (tmp_path / "report.pdf").write_text("outside the run")
+    assert client.get(f"/runs/{run_id}/artifacts/report.pdf").status_code == 404
+    invalid_id = ledger.create({}, run_id="untrusted")
+    ledger.finish(invalid_id, "complete")
+    assert client.get(f"/runs/{invalid_id}/artifacts/report.pdf").status_code == 404
