@@ -1,4 +1,4 @@
-FROM python:3.11-slim@sha256:bab1b7ef4b450c81002278d035eff85ebe394ae94df904f7a3ba14f7e16e487b AS builder
+FROM python:3.14-slim@sha256:a2b82f3c48559aa0a8446d9af49826b6e2b2016f4cd2afabfe6013ec53729170 AS builder
 WORKDIR /build
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential cmake ninja-build ca-certificates \
  && rm -rf /var/lib/apt/lists/*
@@ -16,7 +16,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install pip==26.2.1 setuptool
 COPY src ./src
 RUN pip wheel --no-deps --no-build-isolation --wheel-dir=/wheels .
 
-FROM python:3.11-slim@sha256:bab1b7ef4b450c81002278d035eff85ebe394ae94df904f7a3ba14f7e16e487b AS runtime
+FROM python:3.14-slim@sha256:a2b82f3c48559aa0a8446d9af49826b6e2b2016f4cd2afabfe6013ec53729170 AS runtime
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/matplotlib \
     HOME=/home/vfqec OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 RUN groupadd --gid 10001 vfqec && useradd --uid 10001 --gid vfqec --create-home vfqec
