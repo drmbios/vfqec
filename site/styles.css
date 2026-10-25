@@ -7,3 +7,29 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 .deployed-field{padding:11px 12px;background:var(--paper);border-radius:5px;margin-top:19px}.deployed-field span{display:block;font:7px var(--mono);letter-spacing:.6px;color:var(--muted);margin-bottom:5px}.deployed-field output{font:10px var(--mono);color:var(--green)}
+
+/* Research extension: evidence and model limits stay alongside the efficiency result. */
+.research-section { margin-top: 88px; padding-top: 64px; border-top: 1px solid var(--line, #dce3d9); scroll-margin-top: 30px; }
+.research-lead { max-width: 800px; font-size: 18px; line-height: 1.7; color: #53655e; }
+.research-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 30px 0; }
+.research-metrics article { padding: 26px; border: 1px solid #dce3d9; border-radius: 18px; background: #fff; }
+.research-metrics article > span { font-size: 11px; font-weight: 700; letter-spacing: .09em; color: #5f7169; }
+.research-metrics strong { display: block; font-size: clamp(26px, 3vw, 38px); margin-top: 14px; letter-spacing: -.04em; }
+.research-metrics small { font-size: 17px; font-weight: 500; letter-spacing: 0; }
+.research-metrics p { color: #5f7169; font-size: 13px; line-height: 1.65; }
+.research-caveat { background: #f4ead6; padding: 22px 26px; border-radius: 14px; }
+.research-caveat p { font-size: 14px; line-height: 1.7; margin-bottom: 0; max-width: 970px; }
+.research-explorer { display: grid; grid-template-columns: 1fr 1.7fr; gap: 38px; margin: 40px 0; align-items: start; }
+.research-explorer h3 { font-size: 28px; margin: 8px 0 15px; }
+.research-explorer p { color: #5f7169; line-height: 1.7; }
+.research-explorer label { display: block; font-size: 12px; font-weight: 700; margin: 18px 0 8px; }
+.research-explorer select { width: 100%; padding: 12px; background: white; border: 1px solid #cfdad2; border-radius: 8px; color: #173c37; font: inherit; font-size: 13px; }
+.research-table { width: 100%; border-collapse: collapse; background: white; font-size: 13px; }
+.research-table th, .research-table td { padding: 15px 12px; text-align: left; border-bottom: 1px solid #e1e8df; }
+.research-table th { font-size: 11px; color: #5f7169; }
+.research-table .fourier-row { background: #e9f5ec; font-weight: 700; }
+.research-figure { background: white; border: 1px solid #dce3d9; padding: 18px; border-radius: 12px; }
+.research-figure summary { cursor: pointer; font-size: 14px; font-weight: 700; }
+.research-figure img { display: block; width: 100%; height: auto; margin-top: 20px; }
+.research-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; margin: 28px 0; font-size: 13px; font-weight: 600; }
+@media (max-width: 760px) { .research-metrics, .research-explorer { grid-template-columns: 1fr; } .research-section { margin-top: 55px; padding-top: 40px; } .research-table { min-width: 500px; } }

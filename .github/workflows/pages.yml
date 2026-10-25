@@ -6,6 +6,7 @@ on:
       - 'site/**'
       - 'scripts/build_demo.py'
       - 'benchmarks/E1-bluequbit/**'
+      - 'benchmarks/F1-fourier/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:
