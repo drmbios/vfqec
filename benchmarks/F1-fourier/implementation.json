@@ -1,0 +1,28 @@
+{
+  "protocol_commit": "d73951d9fc548c8d1afa273f1ab5048c7028773f",
+  "numerical_sources_sha256": {
+    "src/vfqec/optimizers/fourier.py": "727c83f6dab32fe39ef93ea6da11beac38a31fb9d24fd06239ae2c62a5be23be",
+    "src/vfqec/optimizers/field.py": "da1c6ba845e5d2d270f8fb87488400b5676aaa066b8351ed0a494755c54875fc",
+    "src/vfqec/physics/density.py": "562dd84a2929bdf8dd35e8bc9aa29727d1e51f7f66e39e8aa5568e06e771d865",
+    "src/vfqec/physics/trajectories.py": "ee7780ab9cd258df9b17adc4a29e0a9a475aafd439f406e23b204065cc4006ee",
+    "src/vfqec/physics/operators.py": "8ec4fd4bbe7ccfbc9cd02d0bbe03616d9d0df115e6d5dc14d4e02ec262ce9c7d",
+    "src/vfqec/noise/model.py": "96d86ec3d3df0bebd4293c488cfd6e35edc9f654894750512ff52bc55dc24d3e",
+    "src/vfqec/agents/orchestrator.py": "9f34675dfd66afa0e512a3e8e93eb92ffa05abdb22edbfc36f5898f723a8f400",
+    "src/vfqec/backends/local.py": "d1fa04a5e4407a05d9bfb68de06ebf5b44d44a8c1ea8e3c5c820d87efb392840",
+    "src/vfqec/backends/bluequbit.py": "c171ec161be445bac2fad0d2f56853cc53788afae1c3f359032ef284b7fd3855"
+  },
+  "numeric_dependencies": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "qiskit": "2.1.2",
+    "qiskit-aer": "0.17.2",
+    "pymatching": "2.3.1",
+    "optuna": "4.4.0",
+    "bluequbit": "0.18.12b1"
+  },
+  "notes": [
+    "Numerical sources match the committed pre-outcome implementation.",
+    "Execution logs may carry +dirty while reports and UI were authored; those markers are preserved.",
+    "Post-experiment dependency updates address reporting/web/build security; numeric dependencies above were unchanged."
+  ]
+}

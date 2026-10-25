@@ -11,7 +11,7 @@ RUN mkdir -p /opt/googletest /opt/stim \
 ENV CMAKE_ARGS="-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=/opt/googletest -DFETCHCONTENT_SOURCE_DIR_STIM=/opt/stim" \
     CMAKE_BUILD_PARALLEL_LEVEL=2
 COPY pyproject.toml requirements.lock ./
-RUN --mount=type=cache,target=/root/.cache/pip pip install pip==26.2.1 setuptools==83.0.0 wheel==0.46.2 \
+RUN --mount=type=cache,target=/root/.cache/pip pip install pip==26.2.1 setuptools==84.1.0 wheel==0.46.2 \
  && pip wheel --no-build-isolation --wheel-dir=/wheels -r requirements.lock
 COPY src ./src
 RUN pip wheel --no-deps --no-build-isolation --wheel-dir=/wheels .
@@ -22,7 +22,7 @@ ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/matplotlib \
 RUN groupadd --gid 10001 vfqec && useradd --uid 10001 --gid vfqec --create-home vfqec
 COPY --from=builder /wheels /wheels
 RUN pip install --no-cache-dir --no-index --find-links=/wheels \
-    pip==26.2.1 setuptools==83.0.0 wheel==0.46.2 vfqec && rm -rf /wheels
+    pip==26.2.1 setuptools==84.1.0 wheel==0.46.2 vfqec && rm -rf /wheels
 WORKDIR /app
 COPY examples ./examples
 RUN mkdir /app/results && chown -R vfqec:vfqec /app

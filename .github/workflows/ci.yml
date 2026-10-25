@@ -21,6 +21,8 @@ jobs:
         env:
           LLM_PROVIDER: none
           OPENBLAS_NUM_THREADS: '1'
+      - name: Verify complete research evidence and build static demo
+        run: python scripts/build_demo.py
       - run: vfqec run E1 --backend local --quick
       - run: docker build --target runtime -t vfqec:ci .
       - run: docker run --rm --entrypoint python vfqec:ci -m pip check

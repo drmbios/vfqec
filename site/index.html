@@ -11,12 +11,13 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
+  <script src="./research.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#lab">Skip to experiment</a>
 <header class="header wrap">
   <a class="brand" href="#" aria-label="VFQEC home"><span class="brand-mark">↗</span>VFQEC<span class="brand-description">VIRTUAL-FIELD QEC</span></a>
-  <nav aria-label="Main navigation"><a href="#lab">Experiment</a><a href="#method">The idea</a><a class="repo-link" href="https://github.com/drmbios/vfqec">GitHub <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="Main navigation"><a href="#research">New research</a><a href="#lab">E1 replay</a><a class="repo-link" href="https://github.com/drmbios/vfqec">GitHub <span aria-hidden="true">↗</span></a></nav>
 </header>
 <main>
   <section class="hero wrap" aria-labelledby="hero-title">
@@ -77,6 +78,25 @@
       </article>
     </div>
     <div class="experiment-note"><span class="info-icon">i</span><p>One seed, one noise model. The 11× comparison describes the final observed counts, not a guaranteed improvement. Round readouts share simulated trajectories; uncertainty intervals are per point. No hardware performance or fault-tolerant threshold is claimed.</p></div>
+  </section>
+  <section id="research" class="research-section wrap" aria-labelledby="research-title">
+    <div class="section-heading"><div><p class="eyebrow">NEW / F1 RESEARCH · OCTOBER 2026</p><h2 id="research-title">Fewer probes.<br>A measured trade-off.</h2></div><p>48 frozen local cases.<br>24 independent held-out configurations.</p></div>
+    <p class="research-lead">A new VFQEC controller adapts known sinusoidal coordinate optimization to syndrome-only calibration, with fresh validation before each update. We tested the efficiency claim and kept the failures in view.</p>
+    <p id="research-status" role="status">Loading the complete study…</p>
+    <div class="research-metrics">
+      <article><span>CALIBRATION PROBE SHOTS</span><strong>60,000 <small>vs. 604,000</small></strong><p>Fourier versus reference SPSA. Approximately 10× fewer learning shots, with a small accuracy trade-off.</p></article>
+      <article><span>HELD-OUT FINAL FAILURES</span><strong id="research-counts">—</strong><p id="research-interval">Paired case-bootstrap uncertainty, including every held-out seed.</p></article>
+      <article><span>BLUEQUBIT CROSS-CHECK</span><strong id="research-cloud">—</strong><p id="research-cloud-note">Coherent CPU simulation only. Noise, syndrome measurements and recovery remain local.</p></article>
+    </div>
+    <div class="research-caveat"><strong>A useful low-budget regime; no unique Fourier advantage established.</strong><p>The recorded outcomes meet a predeclared +0.1-percentage-point margin. Budget SPSA is also competitive at 61,000 shots; the approximately equal-budget comparison is inconclusive. Exact density diagnostics favor reference SPSA slightly. These are simulated probe shots, not a measured saving in hardware shots, cloud cost, or wall-clock time.</p></div>
+    <div class="research-explorer">
+      <div><p class="eyebrow">INSPECT EVERY CASE</p><h3>Where does it hold up?</h3><p>Change the panel to include phase memory, noisy measurements, larger distances, drift, or surface-code crosstalk. The small extension panels are exploratory.</p><label for="research-group">Experiment panel</label><select id="research-group" disabled></select><label for="research-case">Configuration seed</label><select id="research-case" disabled></select><p id="research-config" class="micro-copy"></p></div>
+      <div class="table-scroll"><table class="research-table"><thead><tr><th>Controller</th><th>Final failures</th><th>Error</th><th>Initial learning shots</th></tr></thead><tbody id="research-results"></tbody></table><p id="research-case-note" class="micro-copy"></p></div>
+    </div>
+    <details class="research-figure"><summary>View the complete comparison figure</summary><img src="./research/comparison.png" alt="All 24 held-out cases, paired differences and all exploratory panel outcomes" loading="lazy"></details>
+    <details class="research-figure research-legacy"><summary>See all 18 full E1–E4 revalidation runs</summary><p class="micro-copy">Original preset settings, without quick mode. Each cell shows final failures / readouts. Small differences between calibrated and adaptive counts can be sampling when both share the same field.</p><div class="table-scroll"><table class="research-table"><thead><tr><th>Suite</th><th>Settings</th><th>Unencoded</th><th>Standard</th><th>Twirled</th><th>Calibrated</th><th>Adaptive</th><th>Oracle</th></tr></thead><tbody id="research-legacy-results"></tbody></table></div><p class="micro-copy">E3 brackets no threshold crossing. In E4, slow recalibration can be worse than calibrating once. E5 remains unsubmitted.</p></details>
+    <div class="research-links"><a class="button primary" href="./research/report.html" target="_blank" rel="noopener">Read the full study ↗</a><a href="./research/local-results.json.gz" download>All 48 raw results ↓</a><a href="./research/cloud-verification.json">Cloud jobs &amp; cost ↗</a><a href="./research/protocol.json">Frozen protocol ↗</a><a href="./research/legacy-summary.json">Full E1–E4 revalidation ↗</a></div>
+    <p class="micro-copy">Known Rotosolve and syndrome-calibration research precede this implementation. No first-of-kind invention, quantum advantage, hardware performance, or fault-tolerant threshold is claimed. <a href="https://github.com/drmbios/vfqec/tree/main/benchmarks/F1-fourier">Methods, prior work and reproducible evidence ↗</a></p>
   </section>
   <section id="method" class="method wrap" aria-labelledby="method-title">
     <div class="section-heading"><div><p class="eyebrow">02 / THE IDEA</p><h2 id="method-title">A feedback loop with a narrow view.</h2></div><p>The optimizer sees syndromes.<br>The hidden field stays hidden.</p></div>
