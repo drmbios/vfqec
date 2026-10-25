@@ -18,7 +18,9 @@ held-out configurations. Final observed failures were **75 versus 61 out of
 (95% case-bootstrap interval −0.0115 to +0.0396), inside the predeclared
 +0.1-percentage-point margin. Exact density diagnostics slightly favor reference
 SPSA: this is an efficiency/accuracy trade-off, not evidence of better accuracy.
-The approximately equal-budget comparison is inconclusive.
+Budget SPSA is also competitive at 61,000 shots. The approximately equal-budget
+comparison is inconclusive, so the reduced-budget result cannot be attributed
+uniquely to the Fourier method.
 
 All **48 new local cases** and **18 full E1–E4 revalidation runs** are retained,
 including negative results under drift and surface-code ZZ crosstalk. E1's

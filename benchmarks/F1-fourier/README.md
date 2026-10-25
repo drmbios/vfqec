@@ -29,6 +29,11 @@ interval **[−0.000208333, +0.00028125]**. There is no demonstrated equal-budge
 accuracy advantage. Confidence intervals resample independent cases, never
 correlated round endpoints.
 
+Budget SPSA also operates at approximately one tenth of the reference budget
+and remains competitive. Consequently, this panel supports a useful low-budget
+operating regime for both controllers; it does not establish that Fourier is
+responsible for a unique efficiency advantage.
+
 ## What the software adds
 
 `FourierOptimizer` fits a first-harmonic coordinate slice from three finite-shot
