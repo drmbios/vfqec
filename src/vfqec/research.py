@@ -276,6 +276,7 @@ def main() -> None:
         if not credential:
             raise ValueError("Configure BlueQubit credential locally")
         raw = bluequbit.init(api_token=credential, execution_mode="cloud")
+        raw._set_api_min_request_interval(0.3)
         cloud_client = CampaignBudgetClient(
             raw, path=root / "cloud-budget.sqlite3", cap_usd="10", max_jobs=800
         )
