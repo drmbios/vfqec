@@ -53,6 +53,8 @@ def main(allow_draft: bool = False) -> None:
         "cloud-results.json.gz",
         "legacy-summary.json",
         "legacy-results.json.gz",
+        "implementation.json",
+        "PROTOCOL.md",
     ):
         if not (research / name).is_file() and allow_draft:
             continue

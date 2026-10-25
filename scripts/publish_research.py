@@ -42,6 +42,10 @@ def main():
         budget = json.loads((source / "cloud-budget.json").read_text())
         if budget["halted_reason"] or budget["unsettled_jobs"] or float(budget["actual_usd"]) != 0:
             raise ValueError("Cloud budget is not fully settled at zero cost")
+        ledger_ids = {job["job_id"] for result in cloud for job in result["remote_jobs"]}
+        admitted_ids = {job["job_id"] for job in budget["jobs"]}
+        if ledger_ids != admitted_ids or len(ledger_ids) != budget["provider_calls_admitted"]:
+            raise ValueError("Cloud provenance does not reconcile with all admitted jobs")
         indexed = {r["case"]["id"]: r for r in local}
         verification.update(status="complete", budget=budget)
         for remote in cloud:

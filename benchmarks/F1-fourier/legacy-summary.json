@@ -1,0 +1,4429 @@
+{
+  "kind": "full local legacy revalidation",
+  "created_at_utc": "2026-10-25T11:04:56.097754+00:00",
+  "backend": "local simulation / NumPy",
+  "quick": false,
+  "provider_jobs": 0,
+  "provider_usd": 0,
+  "suite_shot_cap": 20000000,
+  "E5": {
+    "submitted": false,
+    "reason": "Disabled hardware template; no hardware validation claimed"
+  },
+  "suites": {
+    "E1": {
+      "shot_bound": 3252000,
+      "expected_runs": 1,
+      "runs": [
+        {
+          "index": 0,
+          "status": "complete",
+          "config": {
+            "experiment": "E1",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 60,
+            "shots": 4000,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "de0c95c052834062b5e38eae3126df78",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 3252000,
+          "remote_jobs": 0,
+          "seconds": 0.864,
+          "result_path": "de0c95c052834062b5e38eae3126df78/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1029,
+              "shots": 4000,
+              "logical_error": 0.25725
+            },
+            "standard": {
+              "errors": 22,
+              "shots": 4000,
+              "logical_error": 0.0055
+            },
+            "twirled": {
+              "errors": 16,
+              "shots": 4000,
+              "logical_error": 0.004
+            },
+            "calibrated": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            },
+            "adaptive": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08732316169929757,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2909111616048206,
+                "final_error": 0.25725,
+                "final_ci95": [
+                  0.24394121321094736,
+                  0.27102459650620275
+                ]
+              },
+              "standard": {
+                "rate": 9.40780425880514e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0008075222483227073,
+                "final_error": 0.0055,
+                "final_ci95": [
+                  0.0036349976110497673,
+                  0.008313891802465003
+                ]
+              },
+              "twirled": {
+                "rate": 8.592705727334169e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0007863746876578603,
+                "final_error": 0.004,
+                "final_ci95": [
+                  0.0024636991074351283,
+                  0.006488068635948746
+                ]
+              },
+              "calibrated": {
+                "rate": 1.2606740515610942e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00026124536650960523,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              },
+              "adaptive": {
+                "rate": 1.025068236820072e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0003195478586743611,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        }
+      ],
+      "status": "complete"
+    },
+    "E2-Z": {
+      "shot_bound": 108032,
+      "expected_runs": 1,
+      "runs": [
+        {
+          "index": 0,
+          "status": "complete",
+          "config": {
+            "experiment": "E2",
+            "code": "surface",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              -0.08
+            ],
+            "zz": 0.04,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 20,
+            "shots": 512,
+            "evaluation_shots": 512,
+            "window": 2,
+            "iterations": 30,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 4000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "b1a1f2d9982d4c439bd6bc34edece31b",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 108032,
+          "remote_jobs": 0,
+          "seconds": 15.599,
+          "result_path": "b1a1f2d9982d4c439bd6bc34edece31b/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 343,
+              "shots": 512,
+              "logical_error": 0.669921875
+            },
+            "standard": {
+              "errors": 6,
+              "shots": 512,
+              "logical_error": 0.01171875
+            },
+            "twirled": {
+              "errors": 6,
+              "shots": 512,
+              "logical_error": 0.01171875
+            },
+            "calibrated": {
+              "errors": 1,
+              "shots": 512,
+              "logical_error": 0.001953125
+            },
+            "adaptive": {
+              "errors": 0,
+              "shots": 512,
+              "logical_error": 0.0
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 512,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.05870984974418184,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.12434748019475081,
+                "final_error": 0.669921875,
+                "final_ci95": [
+                  0.6280568977143601,
+                  0.7092560441298164
+                ]
+              },
+              "standard": {
+                "rate": 0.0009498854264063647,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0037040544406152717,
+                "final_error": 0.01171875,
+                "final_ci95": [
+                  0.00538157169683981,
+                  0.025328365532537866
+                ]
+              },
+              "twirled": {
+                "rate": 0.0004064208005567497,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0019118660531987541,
+                "final_error": 0.01171875,
+                "final_ci95": [
+                  0.00538157169683981,
+                  0.025328365532537866
+                ]
+              },
+              "calibrated": {
+                "rate": 0.00013302089056347723,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005773456913588557,
+                "final_error": 0.001953125,
+                "final_ci95": [
+                  0.00034485776154337486,
+                  0.010979278212421853
+                ]
+              },
+              "adaptive": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  0.0,
+                  0.007446975722882739
+                ]
+              },
+              "oracle": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  0.0,
+                  0.007446975722882739
+                ]
+              }
+            },
+            "anomalies": [],
+            "reruns": [],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [],
+              "advisor": "rule-based"
+            }
+          }
+        }
+      ],
+      "status": "complete"
+    },
+    "E2-X": {
+      "shot_bound": 108032,
+      "expected_runs": 1,
+      "runs": [
+        {
+          "index": 0,
+          "status": "complete",
+          "config": {
+            "experiment": "E2",
+            "code": "surface",
+            "distance": 3,
+            "basis": "X",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              -0.08
+            ],
+            "zz": 0.04,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 20,
+            "shots": 512,
+            "evaluation_shots": 512,
+            "window": 2,
+            "iterations": 30,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 4000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "422ed6dbd153408e96d1b0f451a12efb",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 108032,
+          "remote_jobs": 0,
+          "seconds": 17.546,
+          "result_path": "422ed6dbd153408e96d1b0f451a12efb/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 157,
+              "shots": 512,
+              "logical_error": 0.306640625
+            },
+            "standard": {
+              "errors": 42,
+              "shots": 512,
+              "logical_error": 0.08203125
+            },
+            "twirled": {
+              "errors": 29,
+              "shots": 512,
+              "logical_error": 0.056640625
+            },
+            "calibrated": {
+              "errors": 41,
+              "shots": 512,
+              "logical_error": 0.080078125
+            },
+            "adaptive": {
+              "errors": 37,
+              "shots": 512,
+              "logical_error": 0.072265625
+            },
+            "oracle": {
+              "errors": 36,
+              "shots": 512,
+              "logical_error": 0.0703125
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.020449327939980114,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.03852165179630191,
+                "final_error": 0.306640625,
+                "final_ci95": [
+                  0.26826359920760706,
+                  0.3478975359352265
+                ]
+              },
+              "standard": {
+                "rate": 0.004800273159670014,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0059319494368981285,
+                "final_error": 0.08203125,
+                "final_ci95": [
+                  0.06125951961291098,
+                  0.10902818665543632
+                ]
+              },
+              "twirled": {
+                "rate": 0.0036738488307890413,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.007254503208795514,
+                "final_error": 0.056640625,
+                "final_ci95": [
+                  0.039723226447529306,
+                  0.08016139655674563
+                ]
+              },
+              "calibrated": {
+                "rate": 0.00421766562373456,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.006665248514673053,
+                "final_error": 0.080078125,
+                "final_ci95": [
+                  0.05957552205350922,
+                  0.10683502396375558
+                ]
+              },
+              "adaptive": {
+                "rate": 0.0044688214091201175,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.007939874247423224,
+                "final_error": 0.072265625,
+                "final_ci95": [
+                  0.05288070279816797,
+                  0.09802120221476687
+                ]
+              },
+              "oracle": {
+                "rate": 0.0037500462938933614,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0027115536416864204,
+                "final_error": 0.0703125,
+                "final_ci95": [
+                  0.05121802443585988,
+                  0.0958067203259925
+                ]
+              }
+            },
+            "anomalies": [],
+            "reruns": [],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [],
+              "advisor": "rule-based"
+            }
+          }
+        }
+      ],
+      "status": "complete"
+    },
+    "E3": {
+      "shot_bound": 5958000,
+      "expected_runs": 9,
+      "runs": [
+        {
+          "index": 0,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.001,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "a4a85966bb96444db3beb6b694168d32",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 0.572,
+          "result_path": "a4a85966bb96444db3beb6b694168d32/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1867,
+              "shots": 2000,
+              "logical_error": 0.9335
+            },
+            "standard": {
+              "errors": 5,
+              "shots": 2000,
+              "logical_error": 0.0025
+            },
+            "twirled": {
+              "errors": 6,
+              "shots": 2000,
+              "logical_error": 0.003
+            },
+            "calibrated": {
+              "errors": 1,
+              "shots": 2000,
+              "logical_error": 0.0005
+            },
+            "adaptive": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08667090503186237,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.3043691619046796,
+                "final_error": 0.9335,
+                "final_ci95": [
+                  0.9217283654429757,
+                  0.9436095545641779
+                ]
+              },
+              "standard": {
+                "rate": 5.358548263582043e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0006169537647258453,
+                "final_error": 0.0025,
+                "final_ci95": [
+                  0.0010683087284139143,
+                  0.005839153316432755
+                ]
+              },
+              "twirled": {
+                "rate": 7.442702412974007e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0006596964632832848,
+                "final_error": 0.003,
+                "final_ci95": [
+                  0.0013756299236301088,
+                  0.006529915073935307
+                ]
+              },
+              "calibrated": {
+                "rate": 3.1951701617371063e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00014845974119661576,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  8.826773070546787e-05,
+                  0.0028268625032662133
+                ]
+              },
+              "adaptive": {
+                "rate": 5.361445784056062e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00022213171435680857,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "oracle": {
+                "rate": 5.62152042750066e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0001530711627340464,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.005,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 0.629,
+          "result_path": "22dcf7dd5b1b4413a179c33ca63dea92/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1645,
+              "shots": 2000,
+              "logical_error": 0.8225
+            },
+            "standard": {
+              "errors": 16,
+              "shots": 2000,
+              "logical_error": 0.008
+            },
+            "twirled": {
+              "errors": 17,
+              "shots": 2000,
+              "logical_error": 0.0085
+            },
+            "calibrated": {
+              "errors": 3,
+              "shots": 2000,
+              "logical_error": 0.0015
+            },
+            "adaptive": {
+              "errors": 5,
+              "shots": 2000,
+              "logical_error": 0.0025
+            },
+            "oracle": {
+              "errors": 3,
+              "shots": 2000,
+              "logical_error": 0.0015
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08566105862088001,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2549232163441011,
+                "final_error": 0.8225,
+                "final_ci95": [
+                  0.8051408098710463,
+                  0.8386226946325456
+                ]
+              },
+              "standard": {
+                "rate": 0.00022149564834436964,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0014064426491841866,
+                "final_error": 0.008,
+                "final_ci95": [
+                  0.004930296853215926,
+                  0.012956077671536958
+                ]
+              },
+              "twirled": {
+                "rate": 0.00023896206085043987,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0014359100316679292,
+                "final_error": 0.0085,
+                "final_ci95": [
+                  0.005313767739685552,
+                  0.013570689737786079
+                ]
+              },
+              "calibrated": {
+                "rate": 6.064777068164584e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0006412716401169545,
+                "final_error": 0.0015,
+                "final_ci95": [
+                  0.0005102635836384819,
+                  0.004401032555770693
+                ]
+              },
+              "adaptive": {
+                "rate": 9.178211263344177e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0010276755662334857,
+                "final_error": 0.0025,
+                "final_ci95": [
+                  0.0010683087284139143,
+                  0.005839153316432755
+                ]
+              },
+              "oracle": {
+                "rate": 8.106361946562544e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0007382888638477964,
+                "final_error": 0.0015,
+                "final_ci95": [
+                  0.0005102635836384819,
+                  0.004401032555770693
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 2,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.02,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "dc5b012bc9274df080d684db26d547bd",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 0.587,
+          "result_path": "dc5b012bc9274df080d684db26d547bd/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1311,
+              "shots": 2000,
+              "logical_error": 0.6555
+            },
+            "standard": {
+              "errors": 84,
+              "shots": 2000,
+              "logical_error": 0.042
+            },
+            "twirled": {
+              "errors": 93,
+              "shots": 2000,
+              "logical_error": 0.0465
+            },
+            "calibrated": {
+              "errors": 67,
+              "shots": 2000,
+              "logical_error": 0.0335
+            },
+            "adaptive": {
+              "errors": 66,
+              "shots": 2000,
+              "logical_error": 0.033
+            },
+            "oracle": {
+              "errors": 63,
+              "shots": 2000,
+              "logical_error": 0.0315
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08392333549238243,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.13450456291355303,
+                "final_error": 0.6555,
+                "final_ci95": [
+                  0.6343933431693024,
+                  0.6760104551262279
+                ]
+              },
+              "standard": {
+                "rate": 0.0017335745262557053,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.003735118211223391,
+                "final_error": 0.042,
+                "final_ci95": [
+                  0.0340516147420547,
+                  0.05170440056757297
+                ]
+              },
+              "twirled": {
+                "rate": 0.001689804042818643,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0031817286389529747,
+                "final_error": 0.0465,
+                "final_ci95": [
+                  0.03810906851120825,
+                  0.056629693372888146
+                ]
+              },
+              "calibrated": {
+                "rate": 0.0012621684745507927,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.003389898621588231,
+                "final_error": 0.0335,
+                "final_ci95": [
+                  0.026465276470638472,
+                  0.04232332864277051
+                ]
+              },
+              "adaptive": {
+                "rate": 0.001199319266789278,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0022753079519556058,
+                "final_error": 0.033,
+                "final_ci95": [
+                  0.026022752700289677,
+                  0.041767769460400554
+                ]
+              },
+              "oracle": {
+                "rate": 0.0011833946580503845,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0020566860099701673,
+                "final_error": 0.0315,
+                "final_ci95": [
+                  0.02469804258437448,
+                  0.0400982307181595
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 3,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 5,
+            "basis": "Z",
+            "p": 0.001,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 0.773,
+          "result_path": "36fc0e7139c14c30aca1c49bf7bfbb23/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1867,
+              "shots": 2000,
+              "logical_error": 0.9335
+            },
+            "standard": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "twirled": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "calibrated": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "adaptive": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08667090503186237,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.3043691619046796,
+                "final_error": 0.9335,
+                "final_ci95": [
+                  0.9217283654429757,
+                  0.9436095545641779
+                ]
+              },
+              "standard": {
+                "rate": 1.8784745475359605e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 8.770521756560484e-05,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "twirled": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "calibrated": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "adaptive": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "oracle": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 4,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 5,
+            "basis": "Z",
+            "p": 0.005,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 0.786,
+          "result_path": "68acefeb7c46417bb22d9524ea4b66b7/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1645,
+              "shots": 2000,
+              "logical_error": 0.8225
+            },
+            "standard": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "twirled": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "calibrated": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "adaptive": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08566105862088001,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2549232163441011,
+                "final_error": 0.8225,
+                "final_ci95": [
+                  0.8051408098710463,
+                  0.8386226946325456
+                ]
+              },
+              "standard": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "twirled": {
+                "rate": 4.2308733633185924e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00019017577785498206,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "calibrated": {
+                "rate": 2.6383964282817073e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00012171703156353785,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "adaptive": {
+                "rate": 1.7630145145903445e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 8.856493509815466e-05,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "oracle": {
+                "rate": 4.998407449066754e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00015983086998682785,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 5,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 5,
+            "basis": "Z",
+            "p": 0.02,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "d5e9de712e484ecb943c150703903923",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 0.845,
+          "result_path": "d5e9de712e484ecb943c150703903923/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1311,
+              "shots": 2000,
+              "logical_error": 0.6555
+            },
+            "standard": {
+              "errors": 7,
+              "shots": 2000,
+              "logical_error": 0.0035
+            },
+            "twirled": {
+              "errors": 4,
+              "shots": 2000,
+              "logical_error": 0.002
+            },
+            "calibrated": {
+              "errors": 6,
+              "shots": 2000,
+              "logical_error": 0.003
+            },
+            "adaptive": {
+              "errors": 6,
+              "shots": 2000,
+              "logical_error": 0.003
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 2000,
+              "logical_error": 0.001
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08392333549238243,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.13450456291355303,
+                "final_error": 0.6555,
+                "final_ci95": [
+                  0.6343933431693024,
+                  0.6760104551262279
+                ]
+              },
+              "standard": {
+                "rate": 0.00011372160217391584,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.000782094397624423,
+                "final_error": 0.0035,
+                "final_ci95": [
+                  0.0016964316970424177,
+                  0.007207196253241745
+                ]
+              },
+              "twirled": {
+                "rate": 0.00013411112643420774,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0008114229011465864,
+                "final_error": 0.002,
+                "final_ci95": [
+                  0.0007780273070510575,
+                  0.005131351785076866
+                ]
+              },
+              "calibrated": {
+                "rate": 7.146030759072605e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0006802365066745537,
+                "final_error": 0.003,
+                "final_ci95": [
+                  0.0013756299236301088,
+                  0.006529915073935307
+                ]
+              },
+              "adaptive": {
+                "rate": 9.029105143318708e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.000688740820854179,
+                "final_error": 0.003,
+                "final_ci95": [
+                  0.0013756299236301088,
+                  0.006529915073935307
+                ]
+              },
+              "oracle": {
+                "rate": 6.060315784087221e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005885797623395504,
+                "final_error": 0.001,
+                "final_ci95": [
+                  0.0002742789176520344,
+                  0.003638934269038394
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 6,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 7,
+            "basis": "Z",
+            "p": 0.001,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "cb8fc68326794841a65c6405adab7a8f",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 9.047,
+          "result_path": "cb8fc68326794841a65c6405adab7a8f/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1867,
+              "shots": 2000,
+              "logical_error": 0.9335
+            },
+            "standard": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "twirled": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "calibrated": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "adaptive": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08667090503186237,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.3043691619046796,
+                "final_error": 0.9335,
+                "final_ci95": [
+                  0.9217283654429757,
+                  0.9436095545641779
+                ]
+              },
+              "standard": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "twirled": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "calibrated": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "adaptive": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "oracle": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 7,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 7,
+            "basis": "Z",
+            "p": 0.005,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "7119942b805644e09407553828b4e5aa",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 9.424,
+          "result_path": "7119942b805644e09407553828b4e5aa/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1645,
+              "shots": 2000,
+              "logical_error": 0.8225
+            },
+            "standard": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "twirled": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "calibrated": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "adaptive": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08566105862088001,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2549232163441011,
+                "final_error": 0.8225,
+                "final_ci95": [
+                  0.8051408098710463,
+                  0.8386226946325456
+                ]
+              },
+              "standard": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "twirled": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "calibrated": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "adaptive": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "oracle": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 8,
+          "status": "complete",
+          "config": {
+            "experiment": "E3",
+            "code": "repetition",
+            "distance": 7,
+            "basis": "Z",
+            "p": 0.02,
+            "q": 0.0,
+            "eps_x": [
+              0.12
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.0,
+            "drift_period": 60.0,
+            "drift_slope": 0.0,
+            "rounds": 30,
+            "shots": 1000,
+            "evaluation_shots": 2000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 20,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 662000,
+          "remote_jobs": 0,
+          "seconds": 10.038,
+          "result_path": "1c6dbe23bbd549e4a14b692343a6273a/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 1311,
+              "shots": 2000,
+              "logical_error": 0.6555
+            },
+            "standard": {
+              "errors": 4,
+              "shots": 2000,
+              "logical_error": 0.002
+            },
+            "twirled": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "calibrated": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            },
+            "adaptive": {
+              "errors": 3,
+              "shots": 2000,
+              "logical_error": 0.0015
+            },
+            "oracle": {
+              "errors": 0,
+              "shots": 2000,
+              "logical_error": 0.0
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.08392333549238243,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.13450456291355303,
+                "final_error": 0.6555,
+                "final_ci95": [
+                  0.6343933431693024,
+                  0.6760104551262279
+                ]
+              },
+              "standard": {
+                "rate": 7.580852407608237e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00021250160086270348,
+                "final_error": 0.002,
+                "final_ci95": [
+                  0.0007780273070510575,
+                  0.005131351785076866
+                ]
+              },
+              "twirled": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "calibrated": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              },
+              "adaptive": {
+                "rate": 5.983784773822705e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00032852362074321925,
+                "final_error": 0.0015,
+                "final_ci95": [
+                  0.0005102635836384819,
+                  0.004401032555770693
+                ]
+              },
+              "oracle": {
+                "rate": null,
+                "status": "insufficient observed failures",
+                "rmse": null,
+                "final_error": 0.0,
+                "final_ci95": [
+                  1.0842021724855044e-19,
+                  0.001917047281252934
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        }
+      ],
+      "status": "complete",
+      "sweep_analysis": {
+        "memory_tradeoff": [
+          {
+            "run_id": "a4a85966bb96444db3beb6b694168d32",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.9335
+          },
+          {
+            "run_id": "a4a85966bb96444db3beb6b694168d32",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0025
+          },
+          {
+            "run_id": "a4a85966bb96444db3beb6b694168d32",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.003
+          },
+          {
+            "run_id": "a4a85966bb96444db3beb6b694168d32",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "a4a85966bb96444db3beb6b694168d32",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "a4a85966bb96444db3beb6b694168d32",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.8225
+          },
+          {
+            "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.008
+          },
+          {
+            "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0085
+          },
+          {
+            "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0015
+          },
+          {
+            "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0025
+          },
+          {
+            "run_id": "22dcf7dd5b1b4413a179c33ca63dea92",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0015
+          },
+          {
+            "run_id": "dc5b012bc9274df080d684db26d547bd",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.6555
+          },
+          {
+            "run_id": "dc5b012bc9274df080d684db26d547bd",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.042
+          },
+          {
+            "run_id": "dc5b012bc9274df080d684db26d547bd",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0465
+          },
+          {
+            "run_id": "dc5b012bc9274df080d684db26d547bd",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0335
+          },
+          {
+            "run_id": "dc5b012bc9274df080d684db26d547bd",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.033
+          },
+          {
+            "run_id": "dc5b012bc9274df080d684db26d547bd",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0315
+          },
+          {
+            "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.9335
+          },
+          {
+            "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "36fc0e7139c14c30aca1c49bf7bfbb23",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.8225
+          },
+          {
+            "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "68acefeb7c46417bb22d9524ea4b66b7",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "d5e9de712e484ecb943c150703903923",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.6555
+          },
+          {
+            "run_id": "d5e9de712e484ecb943c150703903923",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0035
+          },
+          {
+            "run_id": "d5e9de712e484ecb943c150703903923",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.002
+          },
+          {
+            "run_id": "d5e9de712e484ecb943c150703903923",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.003
+          },
+          {
+            "run_id": "d5e9de712e484ecb943c150703903923",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.003
+          },
+          {
+            "run_id": "d5e9de712e484ecb943c150703903923",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.001
+          },
+          {
+            "run_id": "cb8fc68326794841a65c6405adab7a8f",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.9335
+          },
+          {
+            "run_id": "cb8fc68326794841a65c6405adab7a8f",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "cb8fc68326794841a65c6405adab7a8f",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "cb8fc68326794841a65c6405adab7a8f",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "cb8fc68326794841a65c6405adab7a8f",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "cb8fc68326794841a65c6405adab7a8f",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "7119942b805644e09407553828b4e5aa",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.8225
+          },
+          {
+            "run_id": "7119942b805644e09407553828b4e5aa",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "7119942b805644e09407553828b4e5aa",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "7119942b805644e09407553828b4e5aa",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "7119942b805644e09407553828b4e5aa",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "7119942b805644e09407553828b4e5aa",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.6555
+          },
+          {
+            "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.002
+          },
+          {
+            "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.0
+          },
+          {
+            "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.0015
+          },
+          {
+            "run_id": "1c6dbe23bbd549e4a14b692343a6273a",
+            "backend": "local simulation / NumPy",
+            "cadence": 20,
+            "shots_per_evaluation": 1000,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0
+          }
+        ],
+        "suppression": [
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "unencoded",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 1.0
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "unencoded",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": 1.0
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "standard",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "standard",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "twirled",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "twirled",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "calibrated",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "calibrated",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "adaptive",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "adaptive",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "oracle",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.001,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "oracle",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "unencoded",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 1.0
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "unencoded",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": 1.0
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "standard",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "standard",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "twirled",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "twirled",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "calibrated",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "calibrated",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "adaptive",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "adaptive",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "oracle",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.005,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "oracle",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "unencoded",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 1.0
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "unencoded",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": 1.0
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "standard",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 12.0
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "standard",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": 1.75
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "twirled",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 23.25
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "twirled",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "calibrated",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 11.166666666666668
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "calibrated",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "adaptive",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 11.0
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "adaptive",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": 2.0
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "oracle",
+            "distances": [
+              3,
+              5
+            ],
+            "factor_per_two_distance": 31.5
+          },
+          {
+            "p": 0.02,
+            "q": 0.0,
+            "rounds": 30,
+            "basis": "Z",
+            "code": "repetition",
+            "method": "oracle",
+            "distances": [
+              5,
+              7
+            ],
+            "factor_per_two_distance": null
+          }
+        ],
+        "thresholds": {
+          "unencoded": {
+            "status": "no crossing bracketed; no threshold claimed"
+          },
+          "standard": {
+            "status": "no crossing bracketed; no threshold claimed"
+          },
+          "twirled": {
+            "status": "no crossing bracketed; no threshold claimed"
+          },
+          "calibrated": {
+            "status": "no crossing bracketed; no threshold claimed"
+          },
+          "adaptive": {
+            "status": "no crossing bracketed; no threshold claimed"
+          },
+          "oracle": {
+            "status": "no crossing bracketed; no threshold claimed"
+          }
+        },
+        "caution": "Fixed-round memory crossings are not circuit-level thresholds."
+      }
+    },
+    "E4": {
+      "shot_bound": 15435000,
+      "expected_runs": 6,
+      "runs": [
+        {
+          "index": 0,
+          "status": "complete",
+          "config": {
+            "experiment": "E4",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.1,
+            "drift_period": 60.0,
+            "drift_slope": 0.0005,
+            "rounds": 60,
+            "shots": 500,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 5,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 2346000,
+          "remote_jobs": 0,
+          "seconds": 1.753,
+          "result_path": "ab9e040e50c94e04bad9c1ea17a4166a/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 2409,
+              "shots": 4000,
+              "logical_error": 0.60225
+            },
+            "standard": {
+              "errors": 26,
+              "shots": 4000,
+              "logical_error": 0.0065
+            },
+            "twirled": {
+              "errors": 44,
+              "shots": 4000,
+              "logical_error": 0.011
+            },
+            "calibrated": {
+              "errors": 8,
+              "shots": 4000,
+              "logical_error": 0.002
+            },
+            "adaptive": {
+              "errors": 1,
+              "shots": 4000,
+              "logical_error": 0.00025
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.1122537608505429,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2993386172136975,
+                "final_error": 0.60225,
+                "final_ci95": [
+                  0.5869914415518415,
+                  0.6173123522954146
+                ]
+              },
+              "standard": {
+                "rate": 0.00017165160364454298,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0016152827617390607,
+                "final_error": 0.0065,
+                "final_ci95": [
+                  0.0044397068203533615,
+                  0.009507263706582005
+                ]
+              },
+              "twirled": {
+                "rate": 0.00018142775213475176,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.001356836559576498,
+                "final_error": 0.011,
+                "final_ci95": [
+                  0.00820452353937722,
+                  0.014733811997950834
+                ]
+              },
+              "calibrated": {
+                "rate": 3.876140939240261e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005739354728266574,
+                "final_error": 0.002,
+                "final_ci95": [
+                  0.0010137862685910268,
+                  0.003941819247951654
+                ]
+              },
+              "adaptive": {
+                "rate": 1.3390909694234602e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00034432265651717975,
+                "final_error": 0.00025,
+                "final_ci95": [
+                  4.413250195767638e-05,
+                  0.0014148310660989593
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 15: no measured convergence",
+              "Calibration at round 25: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 15,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 25,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 15,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 25,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 1,
+          "status": "complete",
+          "config": {
+            "experiment": "E4",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.1,
+            "drift_period": 60.0,
+            "drift_slope": 0.0005,
+            "rounds": 60,
+            "shots": 2000,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 5,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "1652507d41b64c65b966523316dd9606",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 5064000,
+          "remote_jobs": 0,
+          "seconds": 1.813,
+          "result_path": "1652507d41b64c65b966523316dd9606/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 2409,
+              "shots": 4000,
+              "logical_error": 0.60225
+            },
+            "standard": {
+              "errors": 26,
+              "shots": 4000,
+              "logical_error": 0.0065
+            },
+            "twirled": {
+              "errors": 44,
+              "shots": 4000,
+              "logical_error": 0.011
+            },
+            "calibrated": {
+              "errors": 7,
+              "shots": 4000,
+              "logical_error": 0.00175
+            },
+            "adaptive": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.1122537608505429,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2993386172136975,
+                "final_error": 0.60225,
+                "final_ci95": [
+                  0.5869914415518415,
+                  0.6173123522954146
+                ]
+              },
+              "standard": {
+                "rate": 0.00017165160364454298,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0016152827617390607,
+                "final_error": 0.0065,
+                "final_ci95": [
+                  0.0044397068203533615,
+                  0.009507263706582005
+                ]
+              },
+              "twirled": {
+                "rate": 0.00018142775213475176,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.001356836559576498,
+                "final_error": 0.011,
+                "final_ci95": [
+                  0.00820452353937722,
+                  0.014733811997950834
+                ]
+              },
+              "calibrated": {
+                "rate": 3.373541123192803e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005631626565289128,
+                "final_error": 0.00175,
+                "final_ci95": [
+                  0.0008479657344337417,
+                  0.00360811950375379
+                ]
+              },
+              "adaptive": {
+                "rate": 1.0521891360023948e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0003375494382701003,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory",
+              "Calibration at round 20: no measured convergence",
+              "Calibration at round 25: no measured convergence",
+              "Calibration at round 35: no measured convergence",
+              "Calibration at round 45: no measured convergence"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 20,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 25,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 35,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              },
+              {
+                "calibration_round": 45,
+                "reason": "non-convergence",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 20,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 25,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 35,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                },
+                {
+                  "calibration_round": 45,
+                  "reason": "non-convergence",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 2,
+          "status": "complete",
+          "config": {
+            "experiment": "E4",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.1,
+            "drift_period": 60.0,
+            "drift_slope": 0.0005,
+            "rounds": 60,
+            "shots": 500,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 15,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 1742000,
+          "remote_jobs": 0,
+          "seconds": 0.915,
+          "result_path": "b3da060e37f74c59bed87e5f37e0149f/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 2409,
+              "shots": 4000,
+              "logical_error": 0.60225
+            },
+            "standard": {
+              "errors": 26,
+              "shots": 4000,
+              "logical_error": 0.0065
+            },
+            "twirled": {
+              "errors": 44,
+              "shots": 4000,
+              "logical_error": 0.011
+            },
+            "calibrated": {
+              "errors": 8,
+              "shots": 4000,
+              "logical_error": 0.002
+            },
+            "adaptive": {
+              "errors": 5,
+              "shots": 4000,
+              "logical_error": 0.00125
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.1122537608505429,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2993386172136975,
+                "final_error": 0.60225,
+                "final_ci95": [
+                  0.5869914415518415,
+                  0.6173123522954146
+                ]
+              },
+              "standard": {
+                "rate": 0.00017165160364454298,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0016152827617390607,
+                "final_error": 0.0065,
+                "final_ci95": [
+                  0.0044397068203533615,
+                  0.009507263706582005
+                ]
+              },
+              "twirled": {
+                "rate": 0.00018142775213475176,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.001356836559576498,
+                "final_error": 0.011,
+                "final_ci95": [
+                  0.00820452353937722,
+                  0.014733811997950834
+                ]
+              },
+              "calibrated": {
+                "rate": 3.876140939240261e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005739354728266574,
+                "final_error": 0.002,
+                "final_ci95": [
+                  0.0010137862685910268,
+                  0.003941819247951654
+                ]
+              },
+              "adaptive": {
+                "rate": 3.243380673535166e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005395067874773692,
+                "final_error": 0.00125,
+                "final_ci95": [
+                  0.0005340397696758721,
+                  0.002923004911801361
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 3,
+          "status": "complete",
+          "config": {
+            "experiment": "E4",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.1,
+            "drift_period": 60.0,
+            "drift_slope": 0.0005,
+            "rounds": 60,
+            "shots": 2000,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 15,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "3d93b9310a89447e8e0717fe31292afd",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 2648000,
+          "remote_jobs": 0,
+          "seconds": 0.892,
+          "result_path": "3d93b9310a89447e8e0717fe31292afd/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 2409,
+              "shots": 4000,
+              "logical_error": 0.60225
+            },
+            "standard": {
+              "errors": 26,
+              "shots": 4000,
+              "logical_error": 0.0065
+            },
+            "twirled": {
+              "errors": 44,
+              "shots": 4000,
+              "logical_error": 0.011
+            },
+            "calibrated": {
+              "errors": 7,
+              "shots": 4000,
+              "logical_error": 0.00175
+            },
+            "adaptive": {
+              "errors": 7,
+              "shots": 4000,
+              "logical_error": 0.00175
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.1122537608505429,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2993386172136975,
+                "final_error": 0.60225,
+                "final_ci95": [
+                  0.5869914415518415,
+                  0.6173123522954146
+                ]
+              },
+              "standard": {
+                "rate": 0.00017165160364454298,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0016152827617390607,
+                "final_error": 0.0065,
+                "final_ci95": [
+                  0.0044397068203533615,
+                  0.009507263706582005
+                ]
+              },
+              "twirled": {
+                "rate": 0.00018142775213475176,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.001356836559576498,
+                "final_error": 0.011,
+                "final_ci95": [
+                  0.00820452353937722,
+                  0.014733811997950834
+                ]
+              },
+              "calibrated": {
+                "rate": 3.373541123192803e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005631626565289128,
+                "final_error": 0.00175,
+                "final_ci95": [
+                  0.0008479657344337417,
+                  0.00360811950375379
+                ]
+              },
+              "adaptive": {
+                "rate": 2.6841276254802324e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00038492359366144684,
+                "final_error": 0.00175,
+                "final_ci95": [
+                  0.0008479657344337417,
+                  0.00360811950375379
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 4,
+          "status": "complete",
+          "config": {
+            "experiment": "E4",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.1,
+            "drift_period": 60.0,
+            "drift_slope": 0.0005,
+            "rounds": 60,
+            "shots": 500,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 30,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "14a59d792764496fbbb738216ad2f575",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 1591000,
+          "remote_jobs": 0,
+          "seconds": 0.75,
+          "result_path": "14a59d792764496fbbb738216ad2f575/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 2409,
+              "shots": 4000,
+              "logical_error": 0.60225
+            },
+            "standard": {
+              "errors": 26,
+              "shots": 4000,
+              "logical_error": 0.0065
+            },
+            "twirled": {
+              "errors": 44,
+              "shots": 4000,
+              "logical_error": 0.011
+            },
+            "calibrated": {
+              "errors": 8,
+              "shots": 4000,
+              "logical_error": 0.002
+            },
+            "adaptive": {
+              "errors": 13,
+              "shots": 4000,
+              "logical_error": 0.00325
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.1122537608505429,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2993386172136975,
+                "final_error": 0.60225,
+                "final_ci95": [
+                  0.5869914415518415,
+                  0.6173123522954146
+                ]
+              },
+              "standard": {
+                "rate": 0.00017165160364454298,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0016152827617390607,
+                "final_error": 0.0065,
+                "final_ci95": [
+                  0.0044397068203533615,
+                  0.009507263706582005
+                ]
+              },
+              "twirled": {
+                "rate": 0.00018142775213475176,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.001356836559576498,
+                "final_error": 0.011,
+                "final_ci95": [
+                  0.00820452353937722,
+                  0.014733811997950834
+                ]
+              },
+              "calibrated": {
+                "rate": 3.876140939240261e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005739354728266574,
+                "final_error": 0.002,
+                "final_ci95": [
+                  0.0010137862685910268,
+                  0.003941819247951654
+                ]
+              },
+              "adaptive": {
+                "rate": 4.3236145291490445e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005431305072370736,
+                "final_error": 0.00325,
+                "final_ci95": [
+                  0.0019003484269795885,
+                  0.0055528584813388385
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        },
+        {
+          "index": 5,
+          "status": "complete",
+          "config": {
+            "experiment": "E4",
+            "code": "repetition",
+            "distance": 3,
+            "basis": "Z",
+            "p": 0.002,
+            "q": 0.0,
+            "eps_x": [
+              0.12,
+              -0.08,
+              0.15
+            ],
+            "eps_z": [
+              0.0
+            ],
+            "zz": 0.0,
+            "drift_amplitude": 0.1,
+            "drift_period": 60.0,
+            "drift_slope": 0.0005,
+            "rounds": 60,
+            "shots": 2000,
+            "evaluation_shots": 4000,
+            "window": 2,
+            "iterations": 50,
+            "cadence": 30,
+            "optimizer": "spsa",
+            "seed": 1729,
+            "backend": "local",
+            "device": "cpu",
+            "aer_method": "density_matrix",
+            "max_shots": 20000000,
+            "max_remote_jobs": 1000,
+            "max_credits": 10.0,
+            "batch_size": 256
+          },
+          "run_id": "3c097f717f844347b3aa3fada3d022b8",
+          "commit": "fe70b8c0e0361641d9fa0b816e7929451d1fe27a+dirty",
+          "shots_used": 2044000,
+          "remote_jobs": 0,
+          "seconds": 0.693,
+          "result_path": "3c097f717f844347b3aa3fada3d022b8/result.json",
+          "final_methods": {
+            "unencoded": {
+              "errors": 2409,
+              "shots": 4000,
+              "logical_error": 0.60225
+            },
+            "standard": {
+              "errors": 26,
+              "shots": 4000,
+              "logical_error": 0.0065
+            },
+            "twirled": {
+              "errors": 44,
+              "shots": 4000,
+              "logical_error": 0.011
+            },
+            "calibrated": {
+              "errors": 7,
+              "shots": 4000,
+              "logical_error": 0.00175
+            },
+            "adaptive": {
+              "errors": 9,
+              "shots": 4000,
+              "logical_error": 0.00225
+            },
+            "oracle": {
+              "errors": 2,
+              "shots": 4000,
+              "logical_error": 0.0005
+            }
+          },
+          "analysis": {
+            "fits": {
+              "unencoded": {
+                "rate": 0.1122537608505429,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.2993386172136975,
+                "final_error": 0.60225,
+                "final_ci95": [
+                  0.5869914415518415,
+                  0.6173123522954146
+                ]
+              },
+              "standard": {
+                "rate": 0.00017165160364454298,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0016152827617390607,
+                "final_error": 0.0065,
+                "final_ci95": [
+                  0.0044397068203533615,
+                  0.009507263706582005
+                ]
+              },
+              "twirled": {
+                "rate": 0.00018142775213475176,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.001356836559576498,
+                "final_error": 0.011,
+                "final_ci95": [
+                  0.00820452353937722,
+                  0.014733811997950834
+                ]
+              },
+              "calibrated": {
+                "rate": 3.373541123192803e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005631626565289128,
+                "final_error": 0.00175,
+                "final_ci95": [
+                  0.0008479657344337417,
+                  0.00360811950375379
+                ]
+              },
+              "adaptive": {
+                "rate": 3.611442187348938e-05,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.0005123384039715207,
+                "final_error": 0.00225,
+                "final_ci95": [
+                  0.0011842040470210458,
+                  0.0042709217478767835
+                ]
+              },
+              "oracle": {
+                "rate": 9.905398191860147e-06,
+                "status": "phenomenological exponential fit",
+                "rmse": 0.00033266734332377266,
+                "final_error": 0.0005,
+                "final_ci95": [
+                  0.00013712874495346754,
+                  0.0018213551014583176
+                ]
+              }
+            },
+            "anomalies": [
+              "unencoded: exponential model poorly describes coherent/drifting memory"
+            ],
+            "reruns": [
+              {
+                "method": "unencoded",
+                "reason": "poor decay fit",
+                "shot_multiplier": 2
+              }
+            ],
+            "fit_caution": "Rates are descriptive; coherent/drifting noise need not be exponential. No fit covariance is interpreted as independent-round uncertainty.",
+            "rerun_policy": "Requests are recorded, not automatically billed or run beyond the budget.",
+            "advice": {
+              "action": "review",
+              "reruns": [
+                {
+                  "method": "unencoded",
+                  "reason": "poor decay fit",
+                  "shot_multiplier": 2
+                }
+              ],
+              "advisor": "rule-based"
+            }
+          }
+        }
+      ],
+      "status": "complete",
+      "sweep_analysis": {
+        "memory_tradeoff": [
+          {
+            "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 906000,
+            "method": "unencoded",
+            "final_logical_error": 0.60225
+          },
+          {
+            "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 906000,
+            "method": "standard",
+            "final_logical_error": 0.0065
+          },
+          {
+            "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 906000,
+            "method": "twirled",
+            "final_logical_error": 0.011
+          },
+          {
+            "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 906000,
+            "method": "calibrated",
+            "final_logical_error": 0.002
+          },
+          {
+            "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 906000,
+            "method": "adaptive",
+            "final_logical_error": 0.00025
+          },
+          {
+            "run_id": "ab9e040e50c94e04bad9c1ea17a4166a",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 906000,
+            "method": "oracle",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "1652507d41b64c65b966523316dd9606",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 3624000,
+            "method": "unencoded",
+            "final_logical_error": 0.60225
+          },
+          {
+            "run_id": "1652507d41b64c65b966523316dd9606",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 3624000,
+            "method": "standard",
+            "final_logical_error": 0.0065
+          },
+          {
+            "run_id": "1652507d41b64c65b966523316dd9606",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 3624000,
+            "method": "twirled",
+            "final_logical_error": 0.011
+          },
+          {
+            "run_id": "1652507d41b64c65b966523316dd9606",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 3624000,
+            "method": "calibrated",
+            "final_logical_error": 0.00175
+          },
+          {
+            "run_id": "1652507d41b64c65b966523316dd9606",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 3624000,
+            "method": "adaptive",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "1652507d41b64c65b966523316dd9606",
+            "backend": "local simulation / NumPy",
+            "cadence": 5,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 3624000,
+            "method": "oracle",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 302000,
+            "method": "unencoded",
+            "final_logical_error": 0.60225
+          },
+          {
+            "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 302000,
+            "method": "standard",
+            "final_logical_error": 0.0065
+          },
+          {
+            "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 302000,
+            "method": "twirled",
+            "final_logical_error": 0.011
+          },
+          {
+            "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 302000,
+            "method": "calibrated",
+            "final_logical_error": 0.002
+          },
+          {
+            "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 302000,
+            "method": "adaptive",
+            "final_logical_error": 0.00125
+          },
+          {
+            "run_id": "b3da060e37f74c59bed87e5f37e0149f",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 302000,
+            "method": "oracle",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "3d93b9310a89447e8e0717fe31292afd",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 1208000,
+            "method": "unencoded",
+            "final_logical_error": 0.60225
+          },
+          {
+            "run_id": "3d93b9310a89447e8e0717fe31292afd",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 1208000,
+            "method": "standard",
+            "final_logical_error": 0.0065
+          },
+          {
+            "run_id": "3d93b9310a89447e8e0717fe31292afd",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 1208000,
+            "method": "twirled",
+            "final_logical_error": 0.011
+          },
+          {
+            "run_id": "3d93b9310a89447e8e0717fe31292afd",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 1208000,
+            "method": "calibrated",
+            "final_logical_error": 0.00175
+          },
+          {
+            "run_id": "3d93b9310a89447e8e0717fe31292afd",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 1208000,
+            "method": "adaptive",
+            "final_logical_error": 0.00175
+          },
+          {
+            "run_id": "3d93b9310a89447e8e0717fe31292afd",
+            "backend": "local simulation / NumPy",
+            "cadence": 15,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 1208000,
+            "method": "oracle",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "14a59d792764496fbbb738216ad2f575",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 151000,
+            "method": "unencoded",
+            "final_logical_error": 0.60225
+          },
+          {
+            "run_id": "14a59d792764496fbbb738216ad2f575",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 151000,
+            "method": "standard",
+            "final_logical_error": 0.0065
+          },
+          {
+            "run_id": "14a59d792764496fbbb738216ad2f575",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 151000,
+            "method": "twirled",
+            "final_logical_error": 0.011
+          },
+          {
+            "run_id": "14a59d792764496fbbb738216ad2f575",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 151000,
+            "method": "calibrated",
+            "final_logical_error": 0.002
+          },
+          {
+            "run_id": "14a59d792764496fbbb738216ad2f575",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 151000,
+            "method": "adaptive",
+            "final_logical_error": 0.00325
+          },
+          {
+            "run_id": "14a59d792764496fbbb738216ad2f575",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 500,
+            "calibration_shots": 151000,
+            "method": "oracle",
+            "final_logical_error": 0.0005
+          },
+          {
+            "run_id": "3c097f717f844347b3aa3fada3d022b8",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 604000,
+            "method": "unencoded",
+            "final_logical_error": 0.60225
+          },
+          {
+            "run_id": "3c097f717f844347b3aa3fada3d022b8",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 604000,
+            "method": "standard",
+            "final_logical_error": 0.0065
+          },
+          {
+            "run_id": "3c097f717f844347b3aa3fada3d022b8",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 604000,
+            "method": "twirled",
+            "final_logical_error": 0.011
+          },
+          {
+            "run_id": "3c097f717f844347b3aa3fada3d022b8",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 604000,
+            "method": "calibrated",
+            "final_logical_error": 0.00175
+          },
+          {
+            "run_id": "3c097f717f844347b3aa3fada3d022b8",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 604000,
+            "method": "adaptive",
+            "final_logical_error": 0.00225
+          },
+          {
+            "run_id": "3c097f717f844347b3aa3fada3d022b8",
+            "backend": "local simulation / NumPy",
+            "cadence": 30,
+            "shots_per_evaluation": 2000,
+            "calibration_shots": 604000,
+            "method": "oracle",
+            "final_logical_error": 0.0005
+          }
+        ],
+        "suppression": [],
+        "thresholds": {
+          "unencoded": {
+            "status": "mixed configurations; no joint threshold fit"
+          },
+          "standard": {
+            "status": "mixed configurations; no joint threshold fit"
+          },
+          "twirled": {
+            "status": "mixed configurations; no joint threshold fit"
+          },
+          "calibrated": {
+            "status": "mixed configurations; no joint threshold fit"
+          },
+          "adaptive": {
+            "status": "mixed configurations; no joint threshold fit"
+          },
+          "oracle": {
+            "status": "mixed configurations; no joint threshold fit"
+          }
+        },
+        "caution": "Fixed-round memory crossings are not circuit-level thresholds."
+      }
+    }
+  },
+  "status": "complete",
+  "last_invocation_seconds": 73.57,
+  "completed_at_utc": "2026-10-25T11:06:09.667404+00:00"
+}

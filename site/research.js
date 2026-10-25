@@ -63,6 +63,21 @@
     caseSelect.addEventListener('change', showCase);
     groupSelect.disabled = false; caseSelect.disabled = false;
     showGroup(); find('research-status').hidden = true;
+    const legacyResponse = await fetch('./research/legacy-summary.json');
+    if (!legacyResponse.ok) throw new Error('Legacy evidence unavailable');
+    const legacy = await legacyResponse.json();
+    if (legacy.status !== 'complete') throw new Error('Incomplete legacy evidence');
+    const legacyBody = find('research-legacy-results');
+    for (const [suite, panel] of Object.entries(legacy.suites)) {
+      for (const run of panel.runs) {
+        const c = run.config;
+        const tr = document.createElement('tr');
+        const settings = `d=${c.distance}, ${c.basis}, p=${c.p}, K=${c.cadence}, probe shots=${c.shots}`;
+        const values = [suite, settings, ...['unencoded', 'standard', 'twirled', 'calibrated', 'adaptive', 'oracle'].map((m) => `${run.final_methods[m].errors}/${run.final_methods[m].shots}`)];
+        values.forEach((value) => { const td = document.createElement('td'); td.textContent = value; tr.append(td); });
+        legacyBody.append(tr);
+      }
+    }
   } catch (error) {
     find('research-status').textContent = 'Study explorer could not load. The full report and raw results remain available below.';
     console.error('Research data failed validation.');

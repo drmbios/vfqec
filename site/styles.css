@@ -31,5 +31,6 @@
 .research-figure { background: white; border: 1px solid #dce3d9; padding: 18px; border-radius: 12px; }
 .research-figure summary { cursor: pointer; font-size: 14px; font-weight: 700; }
 .research-figure img { display: block; width: 100%; height: auto; margin-top: 20px; }
+.research-legacy { margin-top: 14px; }
 .research-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; margin: 28px 0; font-size: 13px; font-weight: 600; }
 @media (max-width: 760px) { .research-metrics, .research-explorer { grid-template-columns: 1fr; } .research-section { margin-top: 55px; padding-top: 40px; } .research-table { min-width: 500px; } }
