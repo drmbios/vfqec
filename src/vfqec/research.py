@@ -217,6 +217,7 @@ def run_case(case: dict, protocol: dict, cloud_client=None) -> dict:
             "commit": ledger.get(run_id)["commit"],
             "protocol_sha256": protocol_digest(protocol),
             "backend": backend.label,
+            "executed_config": config.model_dump(),
             "fits": fits,
             "updates": updates,
             "methods": methods,
@@ -291,7 +292,14 @@ def main() -> None:
             "cloud": case["id"] in protocol["cloud_case_ids"],
         }[args.stage]
         path = directory / (case["id"] + ".json")
-        if not selected or path.exists():
+        if not selected:
+            continue
+        if path.exists():
+            previous = json.loads(path.read_text())
+            if previous["protocol_sha256"] != protocol_digest(protocol) or previous["case"] != case:
+                raise ValueError("Completed case differs from the frozen protocol; use a new root")
+            if bool(previous["remote_jobs"]) != bool(cloud_client):
+                raise ValueError("Completed case belongs to another execution backend")
             continue
         print(json.dumps({"event": "started", "case": case["id"]}), flush=True)
         result = run_case(case, protocol, cloud_client)

@@ -9,6 +9,46 @@ This is a phenomenological simulation, not a claim of a new fault-tolerant thres
 hardware performance. It includes real numerical results, an API/worker/dashboard stack,
 and explicit execution provenance. No API key is needed for local experiments.
 
+## October 2026 research extension
+
+The new **validation-gated Fourier controller** used **60,000 simulated calibration
+probe shots**, compared with **604,000** for reference SPSA, across 24 frozen
+held-out configurations. Final observed failures were **75 versus 61 out of
+96,000 readouts**. The paired error difference was +0.0146 percentage points
+(95% case-bootstrap interval −0.0115 to +0.0396), inside the predeclared
++0.1-percentage-point margin. Exact density diagnostics slightly favor reference
+SPSA: this is an efficiency/accuracy trade-off, not evidence of better accuracy.
+The approximately equal-budget comparison is inconclusive.
+
+All **48 new local cases** and **18 full E1–E4 revalidation runs** are retained,
+including negative results under drift and surface-code ZZ crosstalk. E1's
+original six endpoint counts reproduce exactly. Two predeclared BlueQubit CPU
+cross-checks have a shared, persistent maximum-$10 guard that admits only
+freshly estimated $0 jobs; their final costs and consistency checks are public.
+These are hybrid simulations, not QPU experiments.
+
+[Full study and raw evidence](benchmarks/F1-fourier/README.md) ·
+[Frozen protocol](benchmarks/F1-fourier/PROTOCOL.md) ·
+[Interactive study](https://drmbios.github.io/vfqec/#research)
+
+The Fourier slice method follows known Rotosolve research. This repository adds
+the bounded, independently validated syndrome-only implementation and empirical
+study; it does not establish scientific priority or a hardware advantage.
+
+```bash
+python -m vfqec.research protocol
+python -m vfqec.research development
+python -m vfqec.research heldout
+python -m vfqec.research extensions
+python -m vfqec.research report
+python scripts/run_legacy_validation.py
+# Optional, with your own local credential; only free CPU quotes are admitted:
+python -m vfqec.research cloud
+```
+
+Existing completed cases resume only when their protocol and execution backend
+match. Cloud verification never adds duplicate cases to primary inference.
+
 ## Verified E1 result
 
 On October 1, 2026, the full BlueQubit CPU hybrid E1 run completed 458 cloud jobs.
